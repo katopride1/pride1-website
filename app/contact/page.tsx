@@ -1,6 +1,4 @@
-import SectionHeader from '@/components/ui/SectionHeader'
 import ContactForm from '@/components/ui/ContactForm'
-import Button from '@/components/ui/Button'
 
 export const metadata = {
   title: 'お問い合わせ | PRIDE1',
@@ -9,56 +7,121 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <>
-      {/* フォームエリア */}
-      <section className="bg-[#060E1A] px-6 py-20">
-        <div className="max-w-[640px] mx-auto">
-          <SectionHeader
-            eyebrow="CONTACT"
-            title="どんな相談でも、答えます。"
-            description="何を買えばいいか分からない。今のスーツでいいのか不安。転倒後のスーツをどうするか。まずはお気軽にご相談ください。"
-            align="left"
-          />
-          <div className="mt-12">
-            <ContactForm />
-          </div>
-        </div>
-      </section>
+    <div style={{ background: '#060E1A', minHeight: '100vh' }}>
 
-      {/* 電話・LINE情報 */}
-      <section className="bg-[#0D1E30] px-6 py-12">
-        <div className="max-w-[640px] mx-auto text-center">
-          <p className="text-[13px] text-[#4A7A9B] mb-6">
-            フォーム以外でのご連絡はこちら
+      {/* Hero area */}
+      <div style={{ padding: '96px 72px 80px' }}>
+        {/* Eyebrow */}
+        <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
+          <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
+          <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
+            CONTACT
           </p>
-          <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            {/* 電話 */}
-            <div className="flex flex-col items-center">
-              <p className="text-[11px] text-[#4A7A9B] mb-2">お電話</p>
-              <a
-                href="tel:047-445-8366"
-                className="text-[20px] font-medium text-[#EEF4FF] hover:text-[#7AABCF] transition-colors"
-              >
-                047-445-8366
-              </a>
-              <p className="text-[12px] text-[#4A7A9B] mt-1">
-                受付時間はスケジュールページをご確認ください
-              </p>
-            </div>
+        </div>
 
-            {/* LINE */}
-            <div className="flex flex-col items-center">
-              <p className="text-[11px] text-[#4A7A9B] mb-2">LINE</p>
-              <Button href="#line" variant="secondary">
-                LINEで相談する
-              </Button>
-              <p className="text-[12px] text-[#4A7A9B] mt-1">
-                LINEでの相談はお気軽にどうぞ
-              </p>
-            </div>
+        {/* H1 */}
+        <h1
+          style={{
+            fontFamily: "'Noto Sans JP', sans-serif",
+            fontSize: '36px',
+            fontWeight: 300,
+            letterSpacing: '0.06em',
+            color: 'white',
+            marginBottom: '16px',
+          }}
+        >
+          どんな相談でも、答えます。
+        </h1>
+
+        {/* Subtext */}
+        <p
+          style={{
+            fontSize: '11px',
+            lineHeight: 2.2,
+            color: 'rgba(255,255,255,0.38)',
+            letterSpacing: '0.07em',
+          }}
+        >
+          スーツのこと、エアバッグのこと、修理のこと。まずお気軽にご相談ください。
+        </p>
+      </div>
+
+      {/* Content area: 2-column grid */}
+      <div
+        style={{
+          padding: '0 72px 120px',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '96px',
+        }}
+      >
+        {/* Left: Form */}
+        <div style={{ minWidth: 0 }}>
+          <ContactForm />
+        </div>
+
+        {/* Right: Other contact methods */}
+        <div style={{ paddingTop: '8px', minWidth: 0 }}>
+          <p
+            style={{
+              fontSize: '11px',
+              letterSpacing: '0.1em',
+              color: 'rgba(255,255,255,0.35)',
+              marginBottom: '48px',
+            }}
+          >
+            または、直接ご連絡ください。
+          </p>
+
+          {/* Phone */}
+          <div style={{ marginBottom: '56px' }}>
+            <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '12px' }}>
+              PHONE
+            </p>
+            <a
+              href="tel:047-445-8366"
+              style={{
+                fontSize: '24px',
+                fontWeight: 300,
+                color: 'white',
+                letterSpacing: '0.06em',
+                textDecoration: 'none',
+                display: 'block',
+              }}
+            >
+              047-445-8366
+            </a>
+            <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', marginTop: '8px' }}>
+              平日 10:00〜18:00
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '56px' }} />
+
+          {/* LINE */}
+          <div>
+            <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '12px' }}>
+              LINE
+            </p>
+            <a
+              href="#line"
+              style={{
+                fontSize: '14px',
+                fontWeight: 300,
+                color: 'white',
+                textDecoration: 'none',
+                display: 'block',
+              }}
+            >
+              LINEで相談する
+            </a>
+            <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', marginTop: '8px' }}>
+              24時間受付、返信は営業時間内
+            </p>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   )
 }

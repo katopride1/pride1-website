@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import Button from '@/components/ui/Button'
 
 const schema = z.object({
   name:    z.string().min(1, 'お名前を入力してください'),
@@ -23,14 +22,34 @@ const contactTypes = [
   'その他',
 ] as const
 
-const inputClass =
-  'w-full bg-[#0D1E30] border border-[#0D2744] rounded-[4px] px-4 py-3 text-[15px] text-[#EEF4FF] outline-none focus:border-[#1865C8] transition-colors'
+const inputStyle: React.CSSProperties = {
+  background: 'rgba(255,255,255,0.04)',
+  border: '1px solid rgba(255,255,255,0.1)',
+  borderRadius: 0,
+  color: 'white',
+  fontSize: '12px',
+  padding: '14px 16px',
+  width: '100%',
+  outline: 'none',
+}
 
-const labelClass = 'block text-[13px] text-[#7AABCF] mb-1.5'
-const errorClass = 'text-[12px] text-[#E05C5C] mt-1'
+const labelStyle: React.CSSProperties = {
+  display: 'block',
+  fontSize: '10px',
+  letterSpacing: '0.18em',
+  color: 'rgba(255,255,255,0.45)',
+  marginBottom: '8px',
+}
+
+const errorStyle: React.CSSProperties = {
+  fontSize: '11px',
+  color: '#E05C5C',
+  marginTop: '4px',
+}
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [focusedField, setFocusedField] = useState<string | null>(null)
 
   const {
     register,
@@ -53,93 +72,113 @@ export default function ContactForm() {
     }
   }
 
+  const getFocusStyle = (name: string): React.CSSProperties => ({
+    ...inputStyle,
+    borderColor: focusedField === name ? 'rgba(197,160,89,0.5)' : 'rgba(255,255,255,0.1)',
+  })
+
   if (status === 'success') {
     return (
-      <div className="max-w-[640px] bg-[#0D1E30] border border-[#0D2744] rounded-[8px] px-8 py-10 text-[15px] text-[#7AABCF] leading-[1.75]">
+      <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)' }}>
         お問い合わせありがとうございます。48時間以内にご返信いたします。
-      </div>
+      </p>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-[640px] flex flex-col gap-6">
+    <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* お名前 */}
       <div>
-        <label className={labelClass}>
-          お名前 <span className="text-[#E05C5C]">*</span>
+        <label style={labelStyle}>
+          お名前 <span style={{ color: '#E05C5C' }}>*</span>
         </label>
         <input
           {...register('name')}
           type="text"
           placeholder="山田 太郎"
-          className={inputClass}
+          style={getFocusStyle('name')}
+          onFocus={() => setFocusedField('name')}
+          onBlur={() => setFocusedField(null)}
         />
-        {errors.name && <p className={errorClass}>{errors.name.message}</p>}
+        {errors.name && <p style={errorStyle}>{errors.name.message}</p>}
       </div>
 
       {/* メールアドレス */}
       <div>
-        <label className={labelClass}>
-          メールアドレス <span className="text-[#E05C5C]">*</span>
+        <label style={labelStyle}>
+          メールアドレス <span style={{ color: '#E05C5C' }}>*</span>
         </label>
         <input
           {...register('email')}
           type="email"
           placeholder="example@email.com"
-          className={inputClass}
+          style={getFocusStyle('email')}
+          onFocus={() => setFocusedField('email')}
+          onBlur={() => setFocusedField(null)}
         />
-        {errors.email && <p className={errorClass}>{errors.email.message}</p>}
+        {errors.email && <p style={errorStyle}>{errors.email.message}</p>}
       </div>
 
       {/* 相談の種類 */}
       <div>
-        <label className={labelClass}>
-          相談の種類 <span className="text-[#E05C5C]">*</span>
+        <label style={labelStyle}>
+          相談の種類 <span style={{ color: '#E05C5C' }}>*</span>
         </label>
         <select
           {...register('type')}
-          className={inputClass}
-          style={{ appearance: 'none' }}
           defaultValue=""
+          style={getFocusStyle('type')}
+          onFocus={() => setFocusedField('type')}
+          onBlur={() => setFocusedField(null)}
         >
           <option value="" disabled>選択してください</option>
           {contactTypes.map((t) => (
             <option key={t} value={t}>{t}</option>
           ))}
         </select>
-        {errors.type && <p className={errorClass}>{errors.type.message}</p>}
+        {errors.type && <p style={errorStyle}>{errors.type.message}</p>}
       </div>
 
       {/* メッセージ */}
       <div>
-        <label className={labelClass}>
-          メッセージ <span className="text-[#E05C5C]">*</span>
+        <label style={labelStyle}>
+          メッセージ <span style={{ color: '#E05C5C' }}>*</span>
         </label>
         <textarea
           {...register('message')}
           placeholder="ご相談内容をご記入ください"
-          className={`${inputClass} min-h-[160px] resize-y`}
+          style={{ ...getFocusStyle('message'), minHeight: '160px', resize: 'vertical' }}
+          onFocus={() => setFocusedField('message')}
+          onBlur={() => setFocusedField(null)}
         />
-        {errors.message && <p className={errorClass}>{errors.message.message}</p>}
+        {errors.message && <p style={errorStyle}>{errors.message.message}</p>}
       </div>
 
       {/* エラーバナー */}
       {status === 'error' && (
-        <p className="text-[13px] text-[#E05C5C]">
+        <p style={{ fontSize: '11px', color: '#E05C5C' }}>
           送信に失敗しました。お手数ですが、お電話またはLINEでご連絡ください。
         </p>
       )}
 
       {/* 送信ボタン */}
-      <Button
+      <button
         type="submit"
-        variant="primary"
-        size="lg"
-        className="w-full mt-2"
         disabled={status === 'loading'}
+        style={{
+          background: 'transparent',
+          border: '1px solid rgba(197,160,89,0.5)',
+          color: 'rgba(197,160,89,0.85)',
+          fontSize: '10px',
+          letterSpacing: '0.22em',
+          padding: '16px 32px',
+          width: '100%',
+          cursor: status === 'loading' ? 'not-allowed' : 'pointer',
+          opacity: status === 'loading' ? 0.6 : 1,
+        }}
       >
         {status === 'loading' ? '送信中...' : '送信する'}
-      </Button>
+      </button>
     </form>
   )
 }
