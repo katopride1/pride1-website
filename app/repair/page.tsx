@@ -1,1 +1,215 @@
-export default function Page() { return <main /> }
+import Link from 'next/link'
+
+export const metadata = {
+  title: '修理・クリーニング | PRIDE1',
+  description: 'PRIDE1スーツの修理・クリーニングサービス。サーキットの現場で培った技術で、大切なスーツを長く使い続けるためのサポートを提供します。',
+}
+
+const services = [
+  {
+    tag: 'REPAIR',
+    title: '修理',
+    body: '転倒による破損、縫製のほつれ、ファスナーの交換など。状態を確認した上で、最適な修理方法をご提案します。',
+    durationLabel: '納期目安',
+    duration: '2〜4週間',
+  },
+  {
+    tag: 'CLEANING',
+    title: 'クリーニング',
+    body: 'レザースーツ専用のクリーニング。素材を傷めず、臭いや汚れを除去します。シーズン前後のメンテナンスにもおすすめです。',
+    durationLabel: '納期目安',
+    duration: '1〜2週間',
+  },
+  {
+    tag: 'AIRBAG',
+    title: 'エアバッグ点検・交換',
+    body: 'エアバッグシステムの動作確認、ガスカートリッジの交換、センサーの点検を行います。年1回以上の点検を推奨しています。',
+    durationLabel: '納期目安',
+    duration: '当日〜3日',
+  },
+] as const
+
+const steps = [
+  {
+    number: '01',
+    title: 'お問い合わせ',
+    body: 'フォームまたはLINEでご連絡ください。スーツの状態や症状をお知らせいただけると、スムーズにご案内できます。',
+  },
+  {
+    number: '02',
+    title: 'スーツの送付',
+    body: '着払いでスーツをお送りください。サーキット会場での直接お渡しも可能です。',
+  },
+  {
+    number: '03',
+    title: '確認・見積もり',
+    body: '状態を確認後、修理内容と料金をご連絡します。ご了承いただいてから作業を開始します。',
+  },
+  {
+    number: '04',
+    title: '返送・お渡し',
+    body: '作業完了後、着払いにて返送します。サーキット会場でのお渡しも可能です。',
+  },
+] as const
+
+export default function RepairPage() {
+  return (
+    <div style={{ background: '#060E1A', minHeight: '100vh' }}>
+
+      {/* Section 1: Hero */}
+      <div style={{ padding: '96px 72px 80px' }}>
+        <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
+          <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
+          <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
+            REPAIR & CLEANING
+          </p>
+        </div>
+        <h1
+          style={{
+            fontFamily: "'Noto Sans JP', sans-serif",
+            fontSize: '36px',
+            fontWeight: 300,
+            letterSpacing: '0.06em',
+            color: 'white',
+            lineHeight: 1.6,
+            marginBottom: 0,
+          }}
+        >
+          スーツを、長く使い続けるために。
+        </h1>
+        <p
+          style={{
+            fontSize: '12px',
+            lineHeight: 2.2,
+            color: 'rgba(255,255,255,0.38)',
+            letterSpacing: '0.07em',
+            marginTop: '24px',
+            maxWidth: '480px',
+          }}
+        >
+          購入後も、PRIDE1はそばにいます。修理・クリーニング・エアバッグ点検まで、サーキットの現場で培った技術でサポートします。
+        </p>
+      </div>
+
+      {/* Section 2: Services */}
+      <div style={{ padding: '80px 72px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
+          OUR SERVICES
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+          {services.map((s) => (
+            <div
+              key={s.tag}
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '240px 1fr 200px',
+                background: '#0D1B2E',
+                padding: '40px 48px',
+                alignItems: 'start',
+              }}
+            >
+              {/* Left */}
+              <div>
+                <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '12px' }}>
+                  {s.tag}
+                </p>
+                <h3 style={{ fontSize: '16px', fontWeight: 500, color: 'white', lineHeight: 1.5 }}>
+                  {s.title}
+                </h3>
+              </div>
+              {/* Center */}
+              <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', letterSpacing: '0.05em', padding: '0 48px' }}>
+                {s.body}
+              </p>
+              {/* Right */}
+              <div>
+                <p style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '8px' }}>
+                  {s.durationLabel}
+                </p>
+                <p style={{ fontSize: '13px', color: 'white', fontWeight: 300 }}>
+                  {s.duration}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Section 3: How to order */}
+      <div style={{ padding: '80px 72px 96px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
+          HOW TO ORDER
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2px' }}>
+          {steps.map((step) => (
+            <div key={step.number} style={{ padding: '0 32px 0 0' }}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-cormorant), serif',
+                  fontSize: '48px',
+                  fontWeight: 300,
+                  color: 'rgba(255,255,255,0.06)',
+                  lineHeight: 1,
+                  marginBottom: '16px',
+                }}
+              >
+                {step.number}
+              </div>
+              <p style={{ fontSize: '13px', fontWeight: 500, color: 'white', letterSpacing: '0.06em', marginBottom: '12px' }}>
+                {step.title}
+              </p>
+              <p style={{ fontSize: '11px', lineHeight: 2.1, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.04em' }}>
+                {step.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Section 4: CTA */}
+      <div style={{ padding: '80px 72px 120px', borderTop: '1px solid rgba(197,160,89,0.15)' }}>
+        <h2
+          style={{
+            fontFamily: "'Noto Sans JP', sans-serif",
+            fontSize: '28px',
+            fontWeight: 300,
+            letterSpacing: '0.08em',
+            color: 'white',
+            marginBottom: '16px',
+          }}
+        >
+          まず、相談してください。
+        </h2>
+        <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', marginBottom: '48px' }}>
+          修理の相談は無料です。状態を教えていただければ、最適な方法をご提案します。
+        </p>
+        <div className="flex items-center" style={{ gap: '48px' }}>
+          <Link
+            href="/contact"
+            style={{
+              fontSize: '10px',
+              letterSpacing: '0.22em',
+              color: 'rgba(255,255,255,0.8)',
+              borderBottom: '1px solid rgba(255,255,255,0.25)',
+              paddingBottom: '4px',
+              textDecoration: 'none',
+            }}
+          >
+            問い合わせフォームへ
+          </Link>
+          <Link
+            href="tel:047-445-8366"
+            style={{
+              fontSize: '10px',
+              color: 'rgba(197,160,89,0.7)',
+              textDecoration: 'none',
+            }}
+          >
+            → 電話で相談する 047-445-8366
+          </Link>
+        </div>
+      </div>
+
+    </div>
+  )
+}
