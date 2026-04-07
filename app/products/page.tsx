@@ -117,11 +117,34 @@ export default function ProductsPage() {
           {suits.map((suit) => (
             <div
               key={suit.name}
-              className="grid grid-cols-1 md:grid-cols-[280px_1fr_240px] p-6 md:p-12 items-start"
+              className="grid grid-cols-1 md:grid-cols-[200px_280px_1fr_240px] items-start p-6 md:p-0"
               style={{ background: '#0D1B2E' }}
             >
-              {/* Left: model info */}
-              <div>
+              {/* Photo placeholder - desktop only */}
+              <div
+                className="hidden md:flex flex-col items-center justify-center gap-2 self-stretch"
+                style={{
+                  minHeight: '180px',
+                  background: '#0D1B2E',
+                  border: '1px dashed rgba(255,255,255,0.1)',
+                }}
+              >
+                <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.2)' }}>
+                  スーツ正面写真
+                </div>
+                <div style={{ fontSize: '10px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', fontWeight: 500 }}>
+                  SUIT PHOTO
+                </div>
+                <div style={{ fontSize: '9px', letterSpacing: '0.16em', color: 'rgba(255,255,255,0.2)', marginTop: '2px' }}>
+                  {suit.name}
+                </div>
+                <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.15)', marginTop: '2px' }}>
+                  暗背景推奨
+                </div>
+              </div>
+
+              {/* Model info */}
+              <div className="md:p-12">
                 <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '12px' }}>
                   {suit.category}
                 </p>
@@ -134,7 +157,7 @@ export default function ProductsPage() {
               </div>
 
               {/* Center: specs & description */}
-              <div className="mt-6 md:mt-0 md:px-12" style={{ minWidth: 0 }}>
+              <div className="mt-6 md:mt-0 md:py-12 md:px-12" style={{ minWidth: 0 }}>
                 <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', letterSpacing: '0.05em', marginBottom: '24px' }}>
                   {suit.body}
                 </p>
@@ -148,7 +171,7 @@ export default function ProductsPage() {
               </div>
 
               {/* Right: CTA */}
-              <div className="mt-6 md:mt-0">
+              <div className="mt-6 md:mt-0 md:py-12 md:pr-12">
                 {suit.airbag && (
                   <span
                     style={{

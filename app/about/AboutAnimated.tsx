@@ -47,26 +47,54 @@ export default function AboutAnimated() {
 
   return (
     <>
-      {/* Section 2: Statement */}
+      {/* Section 2: Statement — 左: テキスト2段積み / 右: オーナー写真 */}
       <div
         className="px-6 py-12 md:px-[72px] md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
         style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
       >
-        <div ref={leftRef} className="scroll-hidden" style={{ minWidth: 0 }}>
-          <p style={{ fontSize: '18px', fontWeight: 400, color: 'white', lineHeight: 1.7, marginBottom: '32px' }}>
-            1987年、私たちはサーキットに立った。
-          </p>
-          <p style={{ fontSize: '12px', lineHeight: 2.4, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em' }}>
-            全日本ロードレース選手権の現場で、転倒するライダーを見続けてきた。その度に問い続けた。もっと安全にできないか。もっと速く、もっと軽く、もっと確実に守れないか。
-          </p>
+        {/* Left: both text blocks stacked */}
+        <div className="flex flex-col gap-10">
+          <div ref={leftRef} className="scroll-hidden" style={{ minWidth: 0 }}>
+            <p style={{ fontSize: '18px', fontWeight: 400, color: 'white', lineHeight: 1.7, marginBottom: '32px' }}>
+              1987年、私たちはサーキットに立った。
+            </p>
+            <p style={{ fontSize: '12px', lineHeight: 2.4, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em' }}>
+              全日本ロードレース選手権の現場で、転倒するライダーを見続けてきた。その度に問い続けた。もっと安全にできないか。もっと速く、もっと軽く、もっと確実に守れないか。
+            </p>
+          </div>
+          <div ref={rightRef} className="scroll-hidden delay-2" style={{ minWidth: 0 }}>
+            <p style={{ fontSize: '18px', fontWeight: 400, color: 'white', lineHeight: 1.7, marginBottom: '32px' }}>
+              答えは、現場にしかなかった。
+            </p>
+            <p style={{ fontSize: '12px', lineHeight: 2.4, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em' }}>
+              カタログやデータだけでは、ライダーを守れない。だから私たちは38年間、サーキットに通い続けた。試着し、修理し、エアバッグを点検し、転倒を分析した。その積み重ねが、PRIDE1というブランドを作った。
+            </p>
+          </div>
         </div>
-        <div ref={rightRef} className="scroll-hidden delay-2" style={{ minWidth: 0 }}>
-          <p style={{ fontSize: '18px', fontWeight: 400, color: 'white', lineHeight: 1.7, marginBottom: '32px' }}>
-            答えは、現場にしかなかった。
-          </p>
-          <p style={{ fontSize: '12px', lineHeight: 2.4, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em' }}>
-            カタログやデータだけでは、ライダーを守れない。だから私たちは38年間、サーキットに通い続けた。試着し、修理し、エアバッグを点検し、転倒を分析した。その積み重ねが、PRIDE1というブランドを作った。
-          </p>
+
+        {/* Right: owner photo placeholder */}
+        <div
+          style={{
+            width: '100%',
+            height: '360px',
+            background: '#0D1B2E',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            border: '1px dashed rgba(255,255,255,0.1)',
+          }}
+        >
+          <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.2)' }}>
+            推奨: 800×1000px以上
+          </div>
+          <div style={{ fontSize: '11px', letterSpacing: '0.24em', color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
+            OWNER PHOTO
+          </div>
+          <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.18)', marginTop: '4px' }}>
+            オーナーポートレートまたはサーキット現場写真
+          </div>
         </div>
       </div>
 
@@ -111,9 +139,36 @@ export default function AboutAnimated() {
 
       {/* Section 4: Values */}
       <div className="px-6 pb-20 md:px-[72px] md:pb-[120px]">
-        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
+        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '48px' }}>
           OUR VALUES
         </p>
+
+        {/* Workshop photo placeholder */}
+        <div
+          style={{
+            width: '100%',
+            height: '300px',
+            background: '#0D1B2E',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            border: '1px dashed rgba(255,255,255,0.1)',
+            marginBottom: '48px',
+          }}
+        >
+          <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.2)' }}>
+            推奨: 1600×600px以上
+          </div>
+          <div style={{ fontSize: '11px', letterSpacing: '0.24em', color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
+            WORKSHOP PHOTO
+          </div>
+          <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.18)', marginTop: '4px' }}>
+            ミシン・縫製作業場の写真
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
           {values.map((card, i) => (
             <div

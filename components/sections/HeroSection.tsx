@@ -1,19 +1,31 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#060E1A]">
 
       {/* Layer 1: Photo placeholder */}
-      <div className="hero-photo-placeholder absolute inset-0 bg-[#0D1B2E]" aria-hidden="true">
-        <Image
-          src="/images/hero-rider.jpeg"
-          alt="PRIDE1 レーシングライダー"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'right center' }}
-          priority
-        />
+      <div
+        className="absolute inset-0 bg-[#0D1B2E]"
+        aria-hidden="true"
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+          border: '1px dashed rgba(255,255,255,0.1)',
+        }}
+      >
+        <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.2)' }}>
+          推奨: 1920×1080px以上
+        </div>
+        <div style={{ fontSize: '11px', letterSpacing: '0.24em', color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
+          HERO IMAGE
+        </div>
+        <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.18)', marginTop: '4px' }}>
+          被写体は右側に
+        </div>
       </div>
 
       {/* Layer 2: Horizontal gradient overlay */}

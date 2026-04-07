@@ -76,6 +76,31 @@ export default function ServicePage() {
         </p>
       </div>
 
+      {/* CIRCUIT PHOTO placeholder */}
+      <div
+        style={{
+          width: '100%',
+          height: '320px',
+          background: '#0D1B2E',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+          border: '1px dashed rgba(255,255,255,0.1)',
+        }}
+      >
+        <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.2)' }}>
+          推奨: 1600×640px以上
+        </div>
+        <div style={{ fontSize: '11px', letterSpacing: '0.24em', color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
+          CIRCUIT PHOTO
+        </div>
+        <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.18)', marginTop: '4px' }}>
+          サーキット現場・ピットでの対応写真
+        </div>
+      </div>
+
       {/* Section 2: What we do */}
       <div
         className="px-6 py-12 md:px-[72px] md:py-20"
