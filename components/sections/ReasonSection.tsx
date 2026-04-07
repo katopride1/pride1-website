@@ -1,3 +1,7 @@
+'use client'
+
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+
 const cards = [
   {
     number: '01',
@@ -20,13 +24,19 @@ const cards = [
 ] as const
 
 export default function ReasonSection() {
+  const sectionRef = useScrollAnimation()
+  const card1Ref  = useScrollAnimation()
+  const card2Ref  = useScrollAnimation()
+  const card3Ref  = useScrollAnimation()
+  const cardRefs = [card1Ref, card2Ref, card3Ref]
+
   return (
     <section
       className="px-6 pb-20 md:px-[72px]"
       style={{ background: '#060E1A' }}
     >
       {/* Section header */}
-      <div>
+      <div ref={sectionRef} className="scroll-hidden">
         <p
           style={{
             fontSize: '9px',
@@ -65,10 +75,11 @@ export default function ReasonSection() {
 
       {/* Cards */}
       <div>
-        {cards.map((card) => (
+        {cards.map((card, i) => (
           <div
             key={card.number}
-            className="grid grid-cols-1 md:grid-cols-[80px_260px_1fr] py-10"
+            ref={cardRefs[i]}
+            className={`scroll-hidden delay-${i + 1} grid grid-cols-1 md:grid-cols-[80px_260px_1fr] py-10`}
           >
             {/* Left: number - desktop only */}
             <div

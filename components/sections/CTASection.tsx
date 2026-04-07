@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 type CTASectionProps = {
   headline?: string
@@ -9,6 +12,10 @@ export default function CTASection({
   headline = 'まず、相談してください。',
   subtext,
 }: CTASectionProps) {
+  const headlineRef = useScrollAnimation()
+  const subtextRef  = useScrollAnimation()
+  const actionsRef  = useScrollAnimation()
+
   return (
     <section
       className="px-6 py-16 md:px-[72px] md:py-24"
@@ -17,33 +24,42 @@ export default function CTASection({
         borderTop: '1px solid rgba(197,160,89,0.2)',
       }}
     >
-      <h2
-        className="text-[22px] md:text-[28px]"
-        style={{
-          fontFamily: "'Noto Sans JP', sans-serif",
-          fontWeight: 300,
-          letterSpacing: '0.08em',
-          color: 'white',
-          marginBottom: '16px',
-        }}
-      >
-        {headline}
-      </h2>
-      {subtext && (
-        <p
+      <div ref={headlineRef} className="scroll-hidden">
+        <h2
+          className="text-[22px] md:text-[28px]"
           style={{
-            fontSize: '11px',
-            lineHeight: 2.2,
-            color: 'rgba(255,255,255,0.38)',
-            letterSpacing: '0.07em',
-            marginBottom: '56px',
+            fontFamily: "'Noto Sans JP', sans-serif",
+            fontWeight: 300,
+            letterSpacing: '0.08em',
+            color: 'white',
+            marginBottom: '16px',
           }}
         >
-          {subtext}
-        </p>
-      )}
-      {!subtext && <div style={{ marginBottom: '56px' }} />}
-      <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-12">
+          {headline}
+        </h2>
+      </div>
+
+      <div ref={subtextRef} className="scroll-hidden delay-1">
+        {subtext && (
+          <p
+            style={{
+              fontSize: '11px',
+              lineHeight: 2.2,
+              color: 'rgba(255,255,255,0.38)',
+              letterSpacing: '0.07em',
+              marginBottom: '56px',
+            }}
+          >
+            {subtext}
+          </p>
+        )}
+        {!subtext && <div style={{ marginBottom: '56px' }} />}
+      </div>
+
+      <div
+        ref={actionsRef}
+        className="scroll-hidden delay-2 flex flex-col gap-6 md:flex-row md:items-center md:gap-12"
+      >
         <Link
           href="/contact"
           style={{
