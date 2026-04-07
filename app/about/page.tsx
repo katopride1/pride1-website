@@ -4,10 +4,10 @@ export const metadata = {
 }
 
 const numbers = [
-  { value: '1987', label: '年創業' },
-  { value: '38+', label: '年のサーキット経験' },
-  { value: '全日本', label: 'ロードレース選手権\n唯一供給ブランド' },
-  { value: 'MFJ', label: 'スタンダード\n公認取得' },
+  { value: '1987', label: '年創業', mobileSmall: false },
+  { value: '38+', label: '年のサーキット経験', mobileSmall: false },
+  { value: '全日本', label: 'ロードレース選手権\n唯一供給ブランド', mobileSmall: true },
+  { value: 'MFJ', label: 'スタンダード\n公認取得', mobileSmall: true },
 ] as const
 
 const values = [
@@ -33,7 +33,7 @@ export default function AboutPage() {
     <div style={{ background: '#060E1A', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
-      <div style={{ padding: '96px 72px 80px' }}>
+      <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
           <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
@@ -41,9 +41,9 @@ export default function AboutPage() {
           </p>
         </div>
         <h1
+          className="text-2xl md:text-[32px]"
           style={{
             fontFamily: "'Noto Sans JP', sans-serif",
-            fontSize: '32px',
             fontWeight: 300,
             letterSpacing: '0.06em',
             color: 'white',
@@ -57,12 +57,8 @@ export default function AboutPage() {
 
       {/* Section 2: Statement */}
       <div
-        style={{
-          padding: '80px 72px',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '96px',
-        }}
+        className="px-6 py-12 md:px-[72px] md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
       >
         {/* Left */}
         <div style={{ minWidth: 0 }}>
@@ -86,21 +82,19 @@ export default function AboutPage() {
 
       {/* Section 3: Numbers */}
       <div
-        style={{
-          padding: '80px 72px 96px',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-        }}
+        className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           NUMBERS
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
           {numbers.map((item) => (
             <div key={item.value}>
               <div
+                className={item.mobileSmall ? 'text-[20px] md:text-[56px]' : 'text-[56px]'}
                 style={{
                   fontFamily: 'var(--font-cormorant), serif',
-                  fontSize: '56px',
                   fontWeight: 300,
                   color: 'white',
                   lineHeight: 1,
@@ -126,11 +120,11 @@ export default function AboutPage() {
       </div>
 
       {/* Section 4: Values */}
-      <div style={{ padding: '0 72px 120px' }}>
+      <div className="px-6 pb-20 md:px-[72px] md:pb-[120px]">
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           OUR VALUES
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
           {values.map((card) => (
             <div key={card.tag} style={{ background: '#0D1B2E', padding: '48px 40px' }}>
               <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '20px' }}>

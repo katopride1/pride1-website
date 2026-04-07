@@ -33,8 +33,10 @@ export default function HeroSection() {
       />
 
       {/* Layer 4: Content */}
-      <div style={{ position: 'absolute', top: '45%', transform: 'translateY(-50%)', left: '72px', zIndex: 10 }}>
-
+      <div
+        className="absolute z-10 left-6 md:left-[72px]"
+        style={{ top: '45%', transform: 'translateY(-50%)' }}
+      >
         {/* Eyebrow */}
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '28px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
@@ -73,12 +75,11 @@ export default function HeroSection() {
 
         {/* Body text */}
         <p
+          className="text-[10px] md:text-[11px] max-w-full md:max-w-[480px]"
           style={{
-            fontSize: '11px',
             lineHeight: 2.2,
             color: 'rgba(255,255,255,0.38)',
             letterSpacing: '0.07em',
-            maxWidth: '480px',
             marginBottom: '48px',
           }}
         >
@@ -86,7 +87,7 @@ export default function HeroSection() {
         </p>
 
         {/* Actions */}
-        <div className="flex items-center gap-12">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-12">
           <Link
             href="/contact"
             style={{
@@ -114,9 +115,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Decorative number */}
+      {/* Decorative number: desktop only */}
       <div
-        className="absolute z-10 text-right"
+        className="hidden md:block absolute z-10 text-right"
         style={{ right: '72px', bottom: '88px' }}
         aria-hidden="true"
       >

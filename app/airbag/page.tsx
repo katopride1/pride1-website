@@ -34,7 +34,7 @@ export default function AirbagPage() {
     <div style={{ background: '#060E1A', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
-      <div style={{ padding: '96px 72px 80px' }}>
+      <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
           <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
@@ -70,12 +70,10 @@ export default function AirbagPage() {
 
       {/* Section 2: Spec numbers */}
       <div
+        className="px-6 py-12 md:px-[72px] md:py-16 grid grid-cols-3"
         style={{
-          padding: '64px 72px',
           borderTop: '1px solid rgba(255,255,255,0.06)',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
         }}
       >
         {specs.map((spec) => (
@@ -111,13 +109,8 @@ export default function AirbagPage() {
 
       {/* Section 3: How it works */}
       <div
-        style={{
-          padding: '96px 72px',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '96px',
-          alignItems: 'start',
-        }}
+        className="px-6 py-12 md:px-[72px] md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
+        style={{ alignItems: 'start' }}
       >
         {/* Left */}
         <div style={{ minWidth: 0 }}>
@@ -178,10 +171,8 @@ export default function AirbagPage() {
 
       {/* Section 4: CTA */}
       <div
-        style={{
-          padding: '80px 72px 120px',
-          borderTop: '1px solid rgba(197,160,89,0.15)',
-        }}
+        className="px-6 py-12 pb-20 md:px-[72px] md:py-20 md:pb-[120px]"
+        style={{ borderTop: '1px solid rgba(197,160,89,0.15)' }}
       >
         <h2
           style={{
@@ -198,7 +189,7 @@ export default function AirbagPage() {
         <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', marginBottom: '48px' }}>
           エアバッグのこと、スーツとの組み合わせのこと。サーキットの現場から答えます。
         </p>
-        <div className="flex items-center" style={{ gap: '48px' }}>
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-12">
           <Link
             href="/contact"
             style={{

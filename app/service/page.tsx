@@ -42,7 +42,7 @@ export default function ServicePage() {
     <div style={{ background: '#060E1A', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
-      <div style={{ padding: '96px 72px 80px' }}>
+      <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
           <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
@@ -77,13 +77,16 @@ export default function ServicePage() {
       </div>
 
       {/* Section 2: What we do */}
-      <div style={{ padding: '80px 72px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div
+        className="px-6 py-12 md:px-[72px] md:py-20"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           WHAT WE DO
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2px' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
           {services.map((s) => (
-            <div key={s.tag} style={{ background: '#0D1B2E', padding: '40px 32px' }}>
+            <div key={s.tag} style={{ background: '#0D1B2E', padding: '32px 24px' }}>
               <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '16px' }}>
                 {s.tag}
               </p>
@@ -99,7 +102,10 @@ export default function ServicePage() {
       </div>
 
       {/* Section 3: Schedule */}
-      <div style={{ padding: '80px 72px 96px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div
+        className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '16px' }}>
           2025 SCHEDULE
         </p>
@@ -110,11 +116,8 @@ export default function ServicePage() {
           {schedule.map((item, i) => (
             <div
               key={item.month + item.event}
+              className="grid grid-cols-[60px_1fr] md:grid-cols-[120px_1fr_200px] items-center p-4 md:py-6 md:px-8"
               style={{
-                display: 'grid',
-                gridTemplateColumns: '120px 1fr 200px',
-                padding: '24px 32px',
-                alignItems: 'center',
                 background: i % 2 === 0 ? '#0D1B2E' : 'transparent',
                 borderBottom: i % 2 !== 0 ? '1px solid rgba(255,255,255,0.04)' : undefined,
               }}
@@ -125,7 +128,10 @@ export default function ServicePage() {
               <p style={{ fontSize: '13px', color: 'white', fontWeight: 300, letterSpacing: '0.04em' }}>
                 {item.event}
               </p>
-              <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.06em', textAlign: 'right' }}>
+              <p
+                className="hidden md:block"
+                style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.06em', textAlign: 'right' }}
+              >
                 {item.circuit}
               </p>
             </div>
@@ -134,7 +140,10 @@ export default function ServicePage() {
       </div>
 
       {/* Section 4: CTA */}
-      <div style={{ padding: '80px 72px 120px', borderTop: '1px solid rgba(197,160,89,0.15)' }}>
+      <div
+        className="px-6 py-12 pb-20 md:px-[72px] md:py-20 md:pb-[120px]"
+        style={{ borderTop: '1px solid rgba(197,160,89,0.15)' }}
+      >
         <h2
           style={{
             fontFamily: "'Noto Sans JP', sans-serif",
@@ -150,7 +159,7 @@ export default function ServicePage() {
         <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', marginBottom: '48px' }}>
           次のレース会場でお声がけください。スーツのこと、エアバッグのこと、何でもその場でお答えします。
         </p>
-        <div className="flex items-center" style={{ gap: '48px' }}>
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-12">
           <Link
             href="/contact"
             style={{

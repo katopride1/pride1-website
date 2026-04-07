@@ -11,16 +11,16 @@ export default function CTASection({
 }: CTASectionProps) {
   return (
     <section
+      className="px-6 py-16 md:px-[72px] md:py-24"
       style={{
         background: '#060E1A',
         borderTop: '1px solid rgba(197,160,89,0.2)',
-        padding: '96px 72px',
       }}
     >
       <h2
+        className="text-[22px] md:text-[28px]"
         style={{
           fontFamily: "'Noto Sans JP', sans-serif",
-          fontSize: '28px',
           fontWeight: 300,
           letterSpacing: '0.08em',
           color: 'white',
@@ -43,7 +43,7 @@ export default function CTASection({
         </p>
       )}
       {!subtext && <div style={{ marginBottom: '56px' }} />}
-      <div className="flex items-center" style={{ gap: '48px' }}>
+      <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-12">
         <Link
           href="/contact"
           style={{

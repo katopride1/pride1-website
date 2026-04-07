@@ -68,7 +68,7 @@ export default function ProductsPage() {
     <div style={{ background: '#060E1A', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
-      <div style={{ padding: '96px 72px 80px' }}>
+      <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
           <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
@@ -103,7 +103,10 @@ export default function ProductsPage() {
       </div>
 
       {/* Section 2: Lineup */}
-      <div style={{ padding: '80px 72px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div
+        className="px-6 py-12 md:px-[72px] md:py-20"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           OUR LINEUP
         </p>
@@ -114,13 +117,8 @@ export default function ProductsPage() {
           {suits.map((suit) => (
             <div
               key={suit.name}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '280px 1fr 240px',
-                background: '#0D1B2E',
-                padding: '48px',
-                alignItems: 'start',
-              }}
+              className="grid grid-cols-1 md:grid-cols-[280px_1fr_240px] p-6 md:p-12 items-start"
+              style={{ background: '#0D1B2E' }}
             >
               {/* Left: model info */}
               <div>
@@ -136,7 +134,7 @@ export default function ProductsPage() {
               </div>
 
               {/* Center: specs & description */}
-              <div style={{ padding: '0 48px', minWidth: 0 }}>
+              <div className="mt-6 md:mt-0 md:px-12" style={{ minWidth: 0 }}>
                 <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', letterSpacing: '0.05em', marginBottom: '24px' }}>
                   {suit.body}
                 </p>
@@ -150,7 +148,7 @@ export default function ProductsPage() {
               </div>
 
               {/* Right: CTA */}
-              <div>
+              <div className="mt-6 md:mt-0">
                 {suit.airbag && (
                   <span
                     style={{
@@ -189,13 +187,16 @@ export default function ProductsPage() {
       </div>
 
       {/* Section 3: How to order */}
-      <div style={{ padding: '80px 72px 96px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div
+        className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           HOW TO ORDER
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-[2px]">
           {orderSteps.map((step) => (
-            <div key={step.number} style={{ paddingRight: '32px' }}>
+            <div key={step.number} style={{ paddingRight: '16px' }}>
               <div
                 style={{
                   fontFamily: 'var(--font-cormorant), serif',
@@ -220,7 +221,10 @@ export default function ProductsPage() {
       </div>
 
       {/* Section 4: CTA */}
-      <div style={{ padding: '80px 72px 120px', borderTop: '1px solid rgba(197,160,89,0.15)' }}>
+      <div
+        className="px-6 py-12 pb-20 md:px-[72px] md:py-20 md:pb-[120px]"
+        style={{ borderTop: '1px solid rgba(197,160,89,0.15)' }}
+      >
         <h2
           style={{
             fontFamily: "'Noto Sans JP', sans-serif",
@@ -236,7 +240,7 @@ export default function ProductsPage() {
         <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', marginBottom: '48px' }}>
           どのモデルが合っているかわからない方も、まずはお気軽にご連絡ください。
         </p>
-        <div className="flex items-center" style={{ gap: '48px' }}>
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-12">
           <Link
             href="/contact"
             style={{

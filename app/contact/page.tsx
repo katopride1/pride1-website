@@ -10,7 +10,7 @@ export default function ContactPage() {
     <div style={{ background: '#060E1A', minHeight: '100vh' }}>
 
       {/* Hero area */}
-      <div style={{ padding: '96px 72px 80px' }}>
+      <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
         {/* Eyebrow */}
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
@@ -48,12 +48,7 @@ export default function ContactPage() {
 
       {/* Content area: 2-column grid */}
       <div
-        style={{
-          padding: '0 72px 120px',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '96px',
-        }}
+        className="px-6 pb-20 md:px-[72px] md:pb-[120px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
       >
         {/* Left: Form */}
         <div style={{ minWidth: 0 }}>

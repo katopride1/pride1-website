@@ -22,10 +22,8 @@ const cards = [
 export default function ReasonSection() {
   return (
     <section
-      style={{
-        background: '#060E1A',
-        padding: '0 72px 80px',
-      }}
+      className="px-6 pb-20 md:px-[72px]"
+      style={{ background: '#060E1A' }}
     >
       {/* Section header */}
       <div>
@@ -70,14 +68,11 @@ export default function ReasonSection() {
         {cards.map((card) => (
           <div
             key={card.number}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '80px 260px 1fr',
-              padding: '40px 0',
-            }}
+            className="grid grid-cols-1 md:grid-cols-[80px_260px_1fr] py-10"
           >
-            {/* Left: number */}
+            {/* Left: number - desktop only */}
             <div
+              className="hidden md:block"
               style={{
                 fontFamily: 'var(--font-cormorant), serif',
                 fontSize: '88px',
@@ -117,8 +112,8 @@ export default function ReasonSection() {
 
             {/* Right: body */}
             <p
+              className="mt-4 md:mt-0 md:pl-8"
               style={{
-                paddingLeft: '32px',
                 fontSize: '11px',
                 lineHeight: 2.3,
                 color: 'rgba(255,255,255,0.32)',

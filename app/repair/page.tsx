@@ -57,7 +57,7 @@ export default function RepairPage() {
     <div style={{ background: '#060E1A', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
-      <div style={{ padding: '96px 72px 80px' }}>
+      <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
           <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
@@ -92,7 +92,10 @@ export default function RepairPage() {
       </div>
 
       {/* Section 2: Services */}
-      <div style={{ padding: '80px 72px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div
+        className="px-6 py-12 md:px-[72px] md:py-20"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           OUR SERVICES
         </p>
@@ -100,13 +103,8 @@ export default function RepairPage() {
           {services.map((s) => (
             <div
               key={s.tag}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '240px 1fr 200px',
-                background: '#0D1B2E',
-                padding: '40px 48px',
-                alignItems: 'start',
-              }}
+              className="grid grid-cols-1 md:grid-cols-[240px_1fr_200px] items-start"
+              style={{ background: '#0D1B2E', padding: '32px 24px' }}
             >
               {/* Left */}
               <div>
@@ -118,11 +116,14 @@ export default function RepairPage() {
                 </h3>
               </div>
               {/* Center */}
-              <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', letterSpacing: '0.05em', padding: '0 48px' }}>
+              <p
+                className="mt-4 md:mt-0 md:px-12"
+                style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', letterSpacing: '0.05em' }}
+              >
                 {s.body}
               </p>
               {/* Right */}
-              <div>
+              <div className="mt-4 md:mt-0">
                 <p style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '8px' }}>
                   {s.durationLabel}
                 </p>
@@ -136,13 +137,16 @@ export default function RepairPage() {
       </div>
 
       {/* Section 3: How to order */}
-      <div style={{ padding: '80px 72px 96px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div
+        className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           HOW TO ORDER
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2px' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-[2px]">
           {steps.map((step) => (
-            <div key={step.number} style={{ padding: '0 32px 0 0' }}>
+            <div key={step.number} style={{ paddingRight: '16px' }}>
               <div
                 style={{
                   fontFamily: 'var(--font-cormorant), serif',
@@ -167,7 +171,10 @@ export default function RepairPage() {
       </div>
 
       {/* Section 4: CTA */}
-      <div style={{ padding: '80px 72px 120px', borderTop: '1px solid rgba(197,160,89,0.15)' }}>
+      <div
+        className="px-6 py-12 pb-20 md:px-[72px] md:py-20 md:pb-[120px]"
+        style={{ borderTop: '1px solid rgba(197,160,89,0.15)' }}
+      >
         <h2
           style={{
             fontFamily: "'Noto Sans JP', sans-serif",
@@ -183,7 +190,7 @@ export default function RepairPage() {
         <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', marginBottom: '48px' }}>
           修理の相談は無料です。状態を教えていただければ、最適な方法をご提案します。
         </p>
-        <div className="flex items-center" style={{ gap: '48px' }}>
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-12">
           <Link
             href="/contact"
             style={{
