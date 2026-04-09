@@ -20,7 +20,7 @@ export default function CTASection({
     <section
       className="px-6 py-16 md:px-[72px] md:py-24"
       style={{
-        background: '#060E1A',
+        background: '#0B0F14',
         borderTop: '1px solid rgba(197,160,89,0.2)',
       }}
     >

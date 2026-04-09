@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#060E1A]">
+    <section className="relative min-h-screen overflow-hidden bg-[#0B0F14]">
 
       {/* Layer 1: Photo placeholder */}
       <div
@@ -32,7 +32,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to right, rgba(6,14,26,0.96) 0%, rgba(6,14,26,0.85) 30%, rgba(6,14,26,0.45) 65%, rgba(6,14,26,0.05) 100%)',
+          background: 'linear-gradient(to right, rgba(11,15,20,0.96) 0%, rgba(11,15,20,0.85) 30%, rgba(11,15,20,0.45) 65%, rgba(11,15,20,0.05) 100%)',
         }}
         aria-hidden="true"
       />
@@ -40,7 +40,7 @@ export default function HeroSection() {
       {/* Layer 3: Bottom fade overlay */}
       <div
         className="absolute bottom-0 left-0 right-0 h-48"
-        style={{ background: 'linear-gradient(to top, #060E1A 0%, transparent 100%)' }}
+        style={{ background: 'linear-gradient(to top, #0B0F14 0%, transparent 100%)' }}
         aria-hidden="true"
       />
 

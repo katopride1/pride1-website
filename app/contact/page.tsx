@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div style={{ background: '#060E1A', minHeight: '100vh' }}>
+    <div style={{ background: '#0B0F14', minHeight: '100vh' }}>
 
       {/* Hero area (アニメーションなし) */}
       <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">

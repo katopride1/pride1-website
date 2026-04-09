@@ -33,7 +33,7 @@ export default function ReasonSection() {
   return (
     <section
       className="px-6 pb-20 md:px-[72px]"
-      style={{ background: '#060E1A' }}
+      style={{ background: '#0F1318' }}
     >
       {/* Section header */}
       <div ref={sectionRef} className="scroll-hidden">

@@ -39,7 +39,7 @@ const schedule = [
 
 export default function ServicePage() {
   return (
-    <div style={{ background: '#060E1A', minHeight: '100vh' }}>
+    <div style={{ background: '#0B0F14', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
       <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
@@ -81,7 +81,7 @@ export default function ServicePage() {
         style={{
           width: '100%',
           height: '320px',
-          background: '#0D1B2E',
+          background: '#0F1318',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -111,7 +111,7 @@ export default function ServicePage() {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
           {services.map((s) => (
-            <div key={s.tag} style={{ background: '#0D1B2E', padding: '32px 24px' }}>
+            <div key={s.tag} style={{ background: '#0F1318', padding: '32px 24px' }}>
               <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '16px' }}>
                 {s.tag}
               </p>
@@ -129,12 +129,12 @@ export default function ServicePage() {
       {/* Section 3: Schedule */}
       <div
         className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        style={{ background: '#F6F7F9', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '16px' }}>
           2025 SCHEDULE
         </p>
-        <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.05em', marginBottom: '56px' }}>
+        <p style={{ fontSize: '10px', color: '#999999', letterSpacing: '0.05em', marginBottom: '56px' }}>
           ※ 参戦スケジュールは変更になる場合があります。最新情報はSNSでご確認ください。
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
@@ -143,19 +143,19 @@ export default function ServicePage() {
               key={item.month + item.event}
               className="grid grid-cols-[60px_1fr] md:grid-cols-[120px_1fr_200px] items-center p-4 md:py-6 md:px-8"
               style={{
-                background: i % 2 === 0 ? '#0D1B2E' : 'transparent',
-                borderBottom: i % 2 !== 0 ? '1px solid rgba(255,255,255,0.04)' : undefined,
+                background: i % 2 === 0 ? '#FFFFFF' : 'transparent',
+                borderBottom: i % 2 !== 0 ? '1px solid rgba(0,0,0,0.06)' : undefined,
               }}
             >
               <p style={{ fontSize: '11px', color: 'rgba(197,160,89,0.7)', letterSpacing: '0.1em', fontWeight: 300 }}>
                 {item.month}
               </p>
-              <p style={{ fontSize: '13px', color: 'white', fontWeight: 300, letterSpacing: '0.04em' }}>
+              <p style={{ fontSize: '13px', color: '#0B0F14', fontWeight: 300, letterSpacing: '0.04em' }}>
                 {item.event}
               </p>
               <p
                 className="hidden md:block"
-                style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.06em', textAlign: 'right' }}
+                style={{ fontSize: '11px', color: '#555555', letterSpacing: '0.06em', textAlign: 'right' }}
               >
                 {item.circuit}
               </p>

@@ -65,7 +65,7 @@ const orderSteps = [
 
 export default function ProductsPage() {
   return (
-    <div style={{ background: '#060E1A', minHeight: '100vh' }}>
+    <div style={{ background: '#0B0F14', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
       <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
@@ -105,12 +105,12 @@ export default function ProductsPage() {
       {/* Section 2: Lineup */}
       <div
         className="px-6 py-12 md:px-[72px] md:py-20"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        style={{ background: '#FAFAFA', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           OUR LINEUP
         </p>
-        <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.28)', letterSpacing: '0.06em', marginBottom: '48px' }}>
+        <p style={{ fontSize: '10px', color: '#999999', letterSpacing: '0.06em', marginBottom: '48px' }}>
           ※ すべてのスーツはオーダーメイドです。サイズ・カラー・ネームはご相談ください。
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
@@ -118,28 +118,28 @@ export default function ProductsPage() {
             <div
               key={suit.name}
               className="grid grid-cols-1 md:grid-cols-[200px_280px_1fr_240px] items-start p-6 md:p-0"
-              style={{ background: '#0D1B2E' }}
+              style={{ background: '#F0F1F3' }}
             >
               {/* Photo placeholder - desktop only */}
               <div
                 className="hidden md:flex flex-col items-center justify-center gap-2 self-stretch"
                 style={{
                   minHeight: '180px',
-                  background: '#0D1B2E',
-                  border: '1px dashed rgba(255,255,255,0.1)',
+                  background: '#FFFFFF',
+                  border: '1px dashed rgba(0,0,0,0.12)',
                 }}
               >
-                <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.2)' }}>
+                <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(0,0,0,0.3)' }}>
                   スーツ正面写真
                 </div>
-                <div style={{ fontSize: '10px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', fontWeight: 500 }}>
+                <div style={{ fontSize: '10px', letterSpacing: '0.2em', color: 'rgba(0,0,0,0.45)', fontWeight: 500 }}>
                   SUIT PHOTO
                 </div>
-                <div style={{ fontSize: '9px', letterSpacing: '0.16em', color: 'rgba(255,255,255,0.2)', marginTop: '2px' }}>
+                <div style={{ fontSize: '9px', letterSpacing: '0.16em', color: 'rgba(0,0,0,0.3)', marginTop: '2px' }}>
                   {suit.name}
                 </div>
-                <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.15)', marginTop: '2px' }}>
-                  暗背景推奨
+                <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(0,0,0,0.2)', marginTop: '2px' }}>
+                  明背景推奨
                 </div>
               </div>
 
@@ -148,22 +148,22 @@ export default function ProductsPage() {
                 <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '12px' }}>
                   {suit.category}
                 </p>
-                <h3 style={{ fontSize: '18px', fontWeight: 500, color: 'white', lineHeight: 1.4, marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 500, color: '#0B0F14', lineHeight: 1.4, marginBottom: '8px' }}>
                   {suit.name}
                 </h3>
-                <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em' }}>
+                <p style={{ fontSize: '11px', color: '#999999', letterSpacing: '0.06em' }}>
                   {suit.sub}
                 </p>
               </div>
 
               {/* Center: specs & description */}
               <div className="mt-6 md:mt-0 md:py-12 md:px-12" style={{ minWidth: 0 }}>
-                <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', letterSpacing: '0.05em', marginBottom: '24px' }}>
+                <p style={{ fontSize: '11px', lineHeight: 2.2, color: '#555555', letterSpacing: '0.05em', marginBottom: '24px' }}>
                   {suit.body}
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 32px' }}>
                   {suit.specs.map((spec) => (
-                    <p key={spec} style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.04em' }}>
+                    <p key={spec} style={{ fontSize: '10px', color: '#999999', letterSpacing: '0.04em' }}>
                       {spec}
                     </p>
                   ))}
@@ -194,8 +194,8 @@ export default function ProductsPage() {
                     display: 'block',
                     fontSize: '10px',
                     letterSpacing: '0.16em',
-                    color: 'rgba(255,255,255,0.6)',
-                    borderBottom: '1px solid rgba(255,255,255,0.15)',
+                    color: '#0B0F14',
+                    borderBottom: '1px solid rgba(0,0,0,0.2)',
                     paddingBottom: '3px',
                     textDecoration: 'none',
                     marginTop: suit.airbag ? '8px' : '0',
@@ -212,7 +212,7 @@ export default function ProductsPage() {
       {/* Section 3: How to order */}
       <div
         className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        style={{ background: '#F6F7F9', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           HOW TO ORDER
@@ -225,17 +225,17 @@ export default function ProductsPage() {
                   fontFamily: 'var(--font-cormorant), serif',
                   fontSize: '48px',
                   fontWeight: 300,
-                  color: 'rgba(255,255,255,0.06)',
+                  color: 'rgba(0,0,0,0.06)',
                   lineHeight: 1,
                   marginBottom: '16px',
                 }}
               >
                 {step.number}
               </div>
-              <p style={{ fontSize: '13px', fontWeight: 500, color: 'white', letterSpacing: '0.06em', marginBottom: '12px' }}>
+              <p style={{ fontSize: '13px', fontWeight: 500, color: '#0B0F14', letterSpacing: '0.06em', marginBottom: '12px' }}>
                 {step.title}
               </p>
-              <p style={{ fontSize: '11px', lineHeight: 2.1, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.04em' }}>
+              <p style={{ fontSize: '11px', lineHeight: 2.1, color: '#555555', letterSpacing: '0.04em' }}>
                 {step.body}
               </p>
             </div>

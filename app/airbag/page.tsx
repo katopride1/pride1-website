@@ -31,7 +31,7 @@ const steps = [
 
 export default function AirbagPage() {
   return (
-    <div style={{ background: '#060E1A', minHeight: '100vh' }}>
+    <div style={{ background: '#0B0F14', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
       <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
@@ -73,7 +73,7 @@ export default function AirbagPage() {
         style={{
           width: '100%',
           height: '320px',
-          background: '#0D1B2E',
+          background: '#0F1318',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -97,6 +97,7 @@ export default function AirbagPage() {
       <div
         className="px-6 py-12 md:px-[72px] md:py-16 grid grid-cols-3"
         style={{
+          background: '#080C10',
           borderTop: '1px solid rgba(255,255,255,0.06)',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
         }}
@@ -168,7 +169,7 @@ export default function AirbagPage() {
         </div>
 
         {/* Right */}
-        <div style={{ background: '#0D1B2E', padding: '48px 40px', minWidth: 0 }}>
+        <div style={{ background: '#0F1318', padding: '48px 40px', minWidth: 0 }}>
           <h3 style={{ fontSize: '14px', fontWeight: 500, color: 'white', marginBottom: '24px' }}>
             対応モデルについて
           </h3>

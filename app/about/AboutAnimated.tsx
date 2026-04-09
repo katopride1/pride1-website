@@ -101,7 +101,7 @@ export default function AboutAnimated() {
       {/* Section 3: Numbers */}
       <div
         className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        style={{ background: '#F6F7F9', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           NUMBERS
@@ -114,7 +114,7 @@ export default function AboutAnimated() {
                 style={{
                   fontFamily: 'var(--font-cormorant), serif',
                   fontWeight: 300,
-                  color: 'white',
+                  color: '#0B0F14',
                   lineHeight: 1,
                   marginBottom: '12px',
                 }}
@@ -125,7 +125,7 @@ export default function AboutAnimated() {
                 style={{
                   fontSize: '9px',
                   letterSpacing: '0.16em',
-                  color: 'rgba(255,255,255,0.28)',
+                  color: '#999999',
                   lineHeight: 1.8,
                   whiteSpace: 'pre-line',
                 }}
@@ -138,8 +138,8 @@ export default function AboutAnimated() {
       </div>
 
       {/* Section 4: Values */}
-      <div className="px-6 pb-20 md:px-[72px] md:pb-[120px]">
-        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '48px' }}>
+      <div className="px-6 pb-20 md:px-[72px] md:pb-[120px]" style={{ background: '#FAFAFA' }}>
+        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '48px', paddingTop: '64px' }}>
           OUR VALUES
         </p>
 
@@ -148,23 +148,23 @@ export default function AboutAnimated() {
           style={{
             width: '100%',
             height: '300px',
-            background: '#0D1B2E',
+            background: '#EBEBEB',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             gap: '8px',
-            border: '1px dashed rgba(255,255,255,0.1)',
+            border: '1px dashed rgba(0,0,0,0.12)',
             marginBottom: '48px',
           }}
         >
-          <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.2)' }}>
+          <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(0,0,0,0.3)' }}>
             推奨: 1600×600px以上
           </div>
-          <div style={{ fontSize: '11px', letterSpacing: '0.24em', color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
+          <div style={{ fontSize: '11px', letterSpacing: '0.24em', color: 'rgba(0,0,0,0.45)', fontWeight: 500 }}>
             WORKSHOP PHOTO
           </div>
-          <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.18)', marginTop: '4px' }}>
+          <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(0,0,0,0.25)', marginTop: '4px' }}>
             ミシン・縫製作業場の写真
           </div>
         </div>
@@ -175,15 +175,15 @@ export default function AboutAnimated() {
               key={card.tag}
               ref={valRefs[i]}
               className={`scroll-hidden delay-${i + 1}`}
-              style={{ background: '#0D1B2E', padding: '48px 40px' }}
+              style={{ background: '#F0F1F3', padding: '48px 40px' }}
             >
               <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '20px' }}>
                 {card.tag}
               </p>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: 'white', marginBottom: '20px', lineHeight: 1.5 }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#0B0F14', marginBottom: '20px', lineHeight: 1.5 }}>
                 {card.title}
               </h3>
-              <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', letterSpacing: '0.05em' }}>
+              <p style={{ fontSize: '11px', lineHeight: 2.2, color: '#555555', letterSpacing: '0.05em' }}>
                 {card.body}
               </p>
             </div>

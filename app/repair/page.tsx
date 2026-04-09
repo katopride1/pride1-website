@@ -54,7 +54,7 @@ const steps = [
 
 export default function RepairPage() {
   return (
-    <div style={{ background: '#060E1A', minHeight: '100vh' }}>
+    <div style={{ background: '#0B0F14', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
       <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
@@ -96,7 +96,7 @@ export default function RepairPage() {
         style={{
           width: '100%',
           height: '280px',
-          background: '#0D1B2E',
+          background: '#0F1318',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -129,7 +129,7 @@ export default function RepairPage() {
             <div
               key={s.tag}
               className="grid grid-cols-1 md:grid-cols-[240px_1fr_200px] items-start"
-              style={{ background: '#0D1B2E', padding: '32px 24px' }}
+              style={{ background: '#0F1318', padding: '32px 24px' }}
             >
               {/* Left */}
               <div>
@@ -164,7 +164,7 @@ export default function RepairPage() {
       {/* Section 3: How to order */}
       <div
         className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        style={{ background: '#F6F7F9', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           HOW TO ORDER
@@ -177,17 +177,17 @@ export default function RepairPage() {
                   fontFamily: 'var(--font-cormorant), serif',
                   fontSize: '48px',
                   fontWeight: 300,
-                  color: 'rgba(255,255,255,0.06)',
+                  color: 'rgba(0,0,0,0.06)',
                   lineHeight: 1,
                   marginBottom: '16px',
                 }}
               >
                 {step.number}
               </div>
-              <p style={{ fontSize: '13px', fontWeight: 500, color: 'white', letterSpacing: '0.06em', marginBottom: '12px' }}>
+              <p style={{ fontSize: '13px', fontWeight: 500, color: '#0B0F14', letterSpacing: '0.06em', marginBottom: '12px' }}>
                 {step.title}
               </p>
-              <p style={{ fontSize: '11px', lineHeight: 2.1, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.04em' }}>
+              <p style={{ fontSize: '11px', lineHeight: 2.1, color: '#555555', letterSpacing: '0.04em' }}>
                 {step.body}
               </p>
             </div>
