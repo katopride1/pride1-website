@@ -62,7 +62,7 @@ export default function HeroSection() {
           <span
             className="block"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-barlow-condensed), sans-serif",
               fontSize: 'clamp(28px, 3.5vw, 52px)',
               fontWeight: 300,
               color: 'white',
@@ -74,7 +74,7 @@ export default function HeroSection() {
           <span
             className="block"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-barlow), sans-serif",
               fontSize: 'clamp(22px, 2.8vw, 40px)',
               fontWeight: 300,
               fontStyle: 'italic',
@@ -135,7 +135,7 @@ export default function HeroSection() {
       >
         <div
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-barlow-condensed), sans-serif",
             fontSize: '120px',
             fontWeight: 300,
             color: 'rgba(255,255,255,0.04)',

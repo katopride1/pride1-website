@@ -32,8 +32,8 @@ export default function ReasonSection() {
 
   return (
     <section
-      className="px-6 pb-20 md:px-[72px]"
-      style={{ background: '#0F1318' }}
+      className="px-6 pt-14 pb-20 md:px-[72px]"
+      style={{ background: '#FFFFFF' }}
     >
       {/* Section header */}
       <div ref={sectionRef} className="scroll-hidden">
@@ -53,7 +53,7 @@ export default function ReasonSection() {
             fontSize: '32px',
             fontWeight: 400,
             fontStyle: 'normal',
-            color: 'white',
+            color: '#0a0a0a',
             marginBottom: '16px',
             lineHeight: 1.2,
           }}
@@ -64,7 +64,7 @@ export default function ReasonSection() {
           style={{
             fontSize: '11px',
             lineHeight: 2.2,
-            color: 'rgba(255,255,255,0.28)',
+            color: 'rgba(10,10,10,0.55)',
             letterSpacing: '0.07em',
             marginBottom: '96px',
           }}
@@ -80,15 +80,16 @@ export default function ReasonSection() {
             key={card.number}
             ref={cardRefs[i]}
             className={`scroll-hidden delay-${i + 1} grid grid-cols-1 md:grid-cols-[80px_260px_1fr] py-10`}
+            style={{ borderTop: '1px solid rgba(10,10,10,0.10)' }}
           >
             {/* Left: number - desktop only */}
             <div
               className="hidden md:block"
               style={{
-                fontFamily: 'var(--font-cormorant), serif',
+                fontFamily: 'var(--font-barlow-condensed), sans-serif',
                 fontSize: '88px',
                 fontWeight: 300,
-                color: 'rgba(255,255,255,0.05)',
+                color: 'rgba(10,10,10,0.05)',
                 lineHeight: 1,
                 marginTop: '-12px',
               }}
@@ -114,7 +115,7 @@ export default function ReasonSection() {
                   fontWeight: 500,
                   lineHeight: 1.65,
                   letterSpacing: '0.05em',
-                  color: 'white',
+                  color: '#0a0a0a',
                 }}
               >
                 {card.title}
@@ -127,7 +128,7 @@ export default function ReasonSection() {
               style={{
                 fontSize: '11px',
                 lineHeight: 2.3,
-                color: 'rgba(255,255,255,0.32)',
+                color: 'rgba(10,10,10,0.55)',
                 letterSpacing: '0.05em',
                 fontWeight: 300,
               }}

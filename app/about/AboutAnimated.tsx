@@ -112,7 +112,7 @@ export default function AboutAnimated() {
               <div
                 className={item.mobileSmall ? 'text-[20px] md:text-[56px]' : 'text-[56px]'}
                 style={{
-                  fontFamily: 'var(--font-cormorant), serif',
+                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
                   fontWeight: 300,
                   color: '#0B0F14',
                   lineHeight: 1,

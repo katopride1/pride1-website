@@ -62,16 +62,20 @@ export default function CTASection({
       >
         <Link
           href="/contact"
+          className="cta-button"
           style={{
-            fontSize: '10px',
-            letterSpacing: '0.22em',
-            color: 'rgba(255,255,255,0.8)',
-            borderBottom: '1px solid rgba(255,255,255,0.25)',
-            paddingBottom: '4px',
+            display: 'inline-block',
+            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontSize: '12px',
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            color: '#C9A84C',
+            border: '1px solid #C9A84C',
+            padding: '12px 32px',
             textDecoration: 'none',
           }}
         >
-          問い合わせフォームへ
+          Contact Us
         </Link>
         <Link
           href="#line"

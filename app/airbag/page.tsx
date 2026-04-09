@@ -106,7 +106,7 @@ export default function AirbagPage() {
           <div key={spec.value}>
             <div
               style={{
-                fontFamily: 'var(--font-cormorant), serif',
+                fontFamily: 'var(--font-barlow-condensed), sans-serif',
                 fontSize: '56px',
                 fontWeight: 300,
                 color: 'white',
@@ -148,7 +148,7 @@ export default function AirbagPage() {
               <div key={item.step}>
                 <div
                   style={{
-                    fontFamily: 'var(--font-cormorant), serif',
+                    fontFamily: 'var(--font-barlow-condensed), sans-serif',
                     fontSize: '32px',
                     color: 'rgba(255,255,255,0.08)',
                     lineHeight: 1,

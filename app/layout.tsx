@@ -1,15 +1,29 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond } from 'next/font/google'
+import { Barlow, Barlow_Condensed, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
-const cormorant = Cormorant_Garamond({
+const barlow = Barlow({
   subsets: ['latin'],
-  weight: ['300', '400'],
+  weight: ['200', '300', '400'],
   style: ['normal', 'italic'],
   display: 'swap',
-  variable: '--font-cormorant',
+  variable: '--font-barlow',
+})
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: ['200', '300', '400'],
+  display: 'swap',
+  variable: '--font-barlow-condensed',
+})
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  display: 'swap',
+  variable: '--font-noto',
 })
 
 const description =
@@ -33,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja" className={cormorant.variable}>
-      <body>
+    <html lang="ja">
+      <body className={`${barlow.variable} ${barlowCondensed.variable} ${notoSansJP.variable}`}>
         <Header />
         <main style={{ paddingTop: '64px' }}>{children}</main>
         <Footer />

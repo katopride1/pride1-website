@@ -174,7 +174,7 @@ export default function RepairPage() {
             <div key={step.number} style={{ paddingRight: '16px' }}>
               <div
                 style={{
-                  fontFamily: 'var(--font-cormorant), serif',
+                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
                   fontSize: '48px',
                   fontWeight: 300,
                   color: 'rgba(0,0,0,0.06)',

@@ -16,7 +16,7 @@ const snsLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0D1E30] border-t border-[#0D2744] px-6 pt-12 pb-8">
+    <footer className="px-6 pt-12 pb-8" style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       {/* 上段: 3カラム */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
 
@@ -81,7 +81,7 @@ export default function Footer() {
       </div>
 
       {/* 下段: コピーライト */}
-      <div className="border-t border-[#0D2744] mt-8 pt-6">
+      <div className="mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <p className="text-[12px] text-[#4A7A9B] text-center">
           © 2025 プライドワン All rights reserved.
         </p>
