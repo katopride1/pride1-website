@@ -23,10 +23,10 @@ const contactTypes = [
 ] as const
 
 const inputStyle: React.CSSProperties = {
-  background: 'rgba(255,255,255,0.04)',
-  border: '1px solid rgba(255,255,255,0.1)',
+  background: '#F5F4F0',
+  border: '1px solid rgba(10,10,10,0.15)',
   borderRadius: 0,
-  color: 'white',
+  color: '#0a0a0a',
   fontSize: '12px',
   padding: '14px 16px',
   width: '100%',
@@ -37,7 +37,7 @@ const labelStyle: React.CSSProperties = {
   display: 'block',
   fontSize: '10px',
   letterSpacing: '0.18em',
-  color: 'rgba(255,255,255,0.45)',
+  color: 'rgba(10,10,10,0.6)',
   marginBottom: '8px',
 }
 
@@ -74,12 +74,12 @@ export default function ContactForm() {
 
   const getFocusStyle = (name: string): React.CSSProperties => ({
     ...inputStyle,
-    borderColor: focusedField === name ? 'rgba(197,160,89,0.5)' : 'rgba(255,255,255,0.1)',
+    borderColor: focusedField === name ? 'rgba(197,160,89,0.6)' : 'rgba(10,10,10,0.15)',
   })
 
   if (status === 'success') {
     return (
-      <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)' }}>
+      <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.55)' }}>
         お問い合わせありがとうございます。48時間以内にご返信いたします。
       </p>
     )
@@ -96,6 +96,7 @@ export default function ContactForm() {
           {...register('name')}
           type="text"
           placeholder="山田 太郎"
+          className="contact-input"
           style={getFocusStyle('name')}
           onFocus={() => setFocusedField('name')}
           onBlur={() => setFocusedField(null)}

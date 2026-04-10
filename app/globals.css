@@ -64,3 +64,7 @@ body {
   background: #C9A84C;
   color: #000;
 }
+
+.contact-input::placeholder {
+  color: rgba(10,10,10,0.35);
+}

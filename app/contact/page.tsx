@@ -41,6 +41,9 @@ export default function ContactPage() {
         </p>
       </div>
 
+      {/* Divider: dark → white */}
+      <div style={{ height: '1px', background: 'rgba(10,10,10,0.08)' }} />
+
       {/* Content area: アニメーションあり（クライアントコンポーネント） */}
       <ContactGrid />
 

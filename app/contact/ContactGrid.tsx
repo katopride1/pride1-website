@@ -8,19 +8,22 @@ export default function ContactGrid() {
   const rightRef = useScrollAnimation()
 
   return (
-    <div className="px-6 pb-20 md:px-[72px] md:pb-[120px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+    <div
+      className="px-6 pb-20 md:px-[72px] md:pb-[120px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
+      style={{ background: '#FFFFFF' }}
+    >
       {/* Left: Form */}
-      <div ref={formRef} className="scroll-hidden" style={{ minWidth: 0 }}>
+      <div ref={formRef} className="scroll-hidden" style={{ minWidth: 0, paddingTop: '64px' }}>
         <ContactForm />
       </div>
 
       {/* Right: Other contact methods */}
-      <div ref={rightRef} className="scroll-hidden delay-2" style={{ paddingTop: '8px', minWidth: 0 }}>
+      <div ref={rightRef} className="scroll-hidden delay-2" style={{ paddingTop: '72px', minWidth: 0 }}>
         <p
           style={{
             fontSize: '11px',
             letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.35)',
+            color: 'rgba(10,10,10,0.55)',
             marginBottom: '48px',
           }}
         >
@@ -37,7 +40,7 @@ export default function ContactGrid() {
             style={{
               fontSize: '24px',
               fontWeight: 300,
-              color: 'white',
+              color: '#0a0a0a',
               letterSpacing: '0.06em',
               textDecoration: 'none',
               display: 'block',
@@ -45,13 +48,13 @@ export default function ContactGrid() {
           >
             047-445-8366
           </a>
-          <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', marginTop: '8px' }}>
+          <p style={{ fontSize: '10px', color: 'rgba(10,10,10,0.45)', marginTop: '8px' }}>
             平日 10:00〜18:00
           </p>
         </div>
 
         {/* Divider */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '56px' }} />
+        <div style={{ borderTop: '1px solid rgba(10,10,10,0.10)', marginBottom: '56px' }} />
 
         {/* LINE */}
         <div>
@@ -63,14 +66,14 @@ export default function ContactGrid() {
             style={{
               fontSize: '14px',
               fontWeight: 300,
-              color: 'white',
+              color: 'rgba(10,10,10,0.5)',
               textDecoration: 'none',
               display: 'block',
             }}
           >
             LINEで相談する
           </a>
-          <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', marginTop: '8px' }}>
+          <p style={{ fontSize: '10px', color: 'rgba(10,10,10,0.45)', marginTop: '8px' }}>
             24時間受付、返信は営業時間内
           </p>
         </div>
