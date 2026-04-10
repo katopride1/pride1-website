@@ -1,38 +1,29 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#0B0F14]">
 
-      {/* Layer 1: Photo placeholder */}
-      <div
-        className="absolute inset-0 bg-[#0D1B2E]"
-        aria-hidden="true"
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '8px',
-          border: '1px dashed rgba(255,255,255,0.1)',
-        }}
-      >
-        <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.2)' }}>
-          推奨: 1920×1080px以上
-        </div>
-        <div style={{ fontSize: '11px', letterSpacing: '0.24em', color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
-          HERO IMAGE
-        </div>
-        <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.18)', marginTop: '4px' }}>
-          被写体は右側に
-        </div>
+      {/* Layer 1: Hero image */}
+      <div style={{ position: 'absolute', inset: 0 }}>
+        <Image
+          src="/images/hero-rider.jpeg"
+          alt="PRIDE1 レーシングスーツ着用ライダー"
+          fill
+          priority
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center right',
+          }}
+        />
       </div>
 
       {/* Layer 2: Horizontal gradient overlay */}
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to right, rgba(11,15,20,0.96) 0%, rgba(11,15,20,0.85) 30%, rgba(11,15,20,0.45) 65%, rgba(11,15,20,0.05) 100%)',
+          background: 'linear-gradient(to right, rgba(8,8,8,0.82) 0%, rgba(8,8,8,0.65) 30%, rgba(8,8,8,0.2) 55%, transparent 100%)',
         }}
         aria-hidden="true"
       />
@@ -40,7 +31,7 @@ export default function HeroSection() {
       {/* Layer 3: Bottom fade overlay */}
       <div
         className="absolute bottom-0 left-0 right-0 h-48"
-        style={{ background: 'linear-gradient(to top, #0B0F14 0%, transparent 100%)' }}
+        style={{ background: 'linear-gradient(to top, rgba(8,8,8,0.6) 0%, transparent 45%)' }}
         aria-hidden="true"
       />
 
@@ -106,7 +97,7 @@ export default function HeroSection() {
               fontSize: '10px',
               letterSpacing: '0.22em',
               color: 'rgba(255,255,255,0.8)',
-              borderBottom: '1px solid rgba(255,255,255,0.25)',
+              borderBottom: '1px solid #C9A84C',
               paddingBottom: '4px',
               textDecoration: 'none',
             }}
@@ -118,7 +109,7 @@ export default function HeroSection() {
             style={{
               fontSize: '10px',
               letterSpacing: '0.18em',
-              color: 'rgba(197,160,89,0.7)',
+              color: 'rgba(255,255,255,0.75)',
               textDecoration: 'none',
             }}
           >
