@@ -97,9 +97,9 @@ export default function AirbagPage() {
       <div
         className="px-6 py-12 md:px-[72px] md:py-16 grid grid-cols-3"
         style={{
-          background: '#080C10',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          background: '#F5F4F0',
+          borderTop: '1px solid rgba(10,10,10,0.08)',
+          borderBottom: '1px solid rgba(10,10,10,0.08)',
         }}
       >
         {specs.map((spec) => (
@@ -109,7 +109,7 @@ export default function AirbagPage() {
                 fontFamily: 'var(--font-barlow-condensed), sans-serif',
                 fontSize: '56px',
                 fontWeight: 300,
-                color: 'white',
+                color: '#0a0a0a',
                 lineHeight: 1,
                 marginBottom: '10px',
               }}
@@ -123,7 +123,7 @@ export default function AirbagPage() {
               style={{
                 fontSize: '9px',
                 letterSpacing: '0.18em',
-                color: 'rgba(255,255,255,0.28)',
+                color: 'rgba(10,10,10,0.45)',
                 lineHeight: 1.8,
               }}
             >
@@ -136,7 +136,7 @@ export default function AirbagPage() {
       {/* Section 3: How it works */}
       <div
         className="px-6 py-12 md:px-[72px] md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
-        style={{ alignItems: 'start' }}
+        style={{ background: '#FFFFFF', alignItems: 'start' }}
       >
         {/* Left */}
         <div style={{ minWidth: 0 }}>
@@ -144,23 +144,23 @@ export default function AirbagPage() {
             HOW IT WORKS
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-            {steps.map((item) => (
-              <div key={item.step}>
+            {steps.map((item, i) => (
+              <div key={item.step} style={{ borderTop: i === 0 ? undefined : '1px solid rgba(10,10,10,0.10)', paddingTop: i === 0 ? undefined : '40px', marginTop: i === 0 ? undefined : '-40px' }}>
                 <div
                   style={{
                     fontFamily: 'var(--font-barlow-condensed), sans-serif',
                     fontSize: '32px',
-                    color: 'rgba(255,255,255,0.08)',
+                    color: 'rgba(10,10,10,0.08)',
                     lineHeight: 1,
                     marginBottom: '8px',
                   }}
                 >
                   {item.step}
                 </div>
-                <p style={{ fontSize: '13px', fontWeight: 500, color: 'white', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                <p style={{ fontSize: '13px', fontWeight: 500, color: '#0a0a0a', letterSpacing: '0.08em', marginBottom: '10px' }}>
                   {item.title}
                 </p>
-                <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.05em' }}>
+                <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.55)', letterSpacing: '0.05em' }}>
                   {item.body}
                 </p>
               </div>
@@ -169,11 +169,11 @@ export default function AirbagPage() {
         </div>
 
         {/* Right */}
-        <div style={{ background: '#080808', padding: '48px 40px', minWidth: 0 }}>
-          <h3 style={{ fontSize: '14px', fontWeight: 500, color: 'white', marginBottom: '24px' }}>
+        <div style={{ background: '#F5F4F0', border: '1px solid rgba(10,10,10,0.10)', padding: '48px 40px', minWidth: 0 }}>
+          <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#0a0a0a', marginBottom: '24px' }}>
             対応モデルについて
           </h3>
-          <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.45)', marginBottom: '40px' }}>
+          <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.55)', marginBottom: '40px' }}>
             エアバッグシステムはすべてのPRIDE1スーツに対応しているわけではありません。対応モデルとガスカートリッジの詳細については、お気軽にご相談ください。
           </p>
           <Link
@@ -181,7 +181,7 @@ export default function AirbagPage() {
             style={{
               fontSize: '10px',
               letterSpacing: '0.2em',
-              color: 'rgba(197,160,89,0.8)',
+              color: '#C9A84C',
               borderBottom: '1px solid rgba(197,160,89,0.35)',
               paddingBottom: '4px',
               textDecoration: 'none',
@@ -189,11 +189,14 @@ export default function AirbagPage() {
           >
             スーツの対応状況を確認する →
           </Link>
-          <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', marginTop: '32px', lineHeight: 1.8 }}>
+          <p style={{ fontSize: '10px', color: 'rgba(10,10,10,0.35)', marginTop: '32px', lineHeight: 1.8 }}>
             ※ガスカートリッジは消耗品です。定期的な交換をお勧めします。
           </p>
         </div>
       </div>
+
+      {/* Divider: white → dark */}
+      <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }} />
 
       {/* Section 4: CTA */}
       <div
