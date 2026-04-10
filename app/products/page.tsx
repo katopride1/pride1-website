@@ -65,7 +65,7 @@ const orderSteps = [
 
 export default function ProductsPage() {
   return (
-    <div style={{ background: '#0B0F14', minHeight: '100vh' }}>
+    <div style={{ background: '#080808', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
       <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
@@ -105,7 +105,7 @@ export default function ProductsPage() {
       {/* Section 2: Lineup */}
       <div
         className="px-6 py-12 md:px-[72px] md:py-20"
-        style={{ background: '#FAFAFA', borderTop: '1px solid rgba(0,0,0,0.06)' }}
+        style={{ background: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           OUR LINEUP
@@ -148,7 +148,7 @@ export default function ProductsPage() {
                 <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '12px' }}>
                   {suit.category}
                 </p>
-                <h3 style={{ fontSize: '18px', fontWeight: 500, color: '#0B0F14', lineHeight: 1.4, marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 500, color: '#080808', lineHeight: 1.4, marginBottom: '8px' }}>
                   {suit.name}
                 </h3>
                 <p style={{ fontSize: '11px', color: '#999999', letterSpacing: '0.06em' }}>
@@ -194,7 +194,7 @@ export default function ProductsPage() {
                     display: 'block',
                     fontSize: '10px',
                     letterSpacing: '0.16em',
-                    color: '#0B0F14',
+                    color: '#080808',
                     borderBottom: '1px solid rgba(0,0,0,0.2)',
                     paddingBottom: '3px',
                     textDecoration: 'none',
@@ -212,7 +212,7 @@ export default function ProductsPage() {
       {/* Section 3: How to order */}
       <div
         className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
-        style={{ background: '#F6F7F9', borderTop: '1px solid rgba(0,0,0,0.06)' }}
+        style={{ background: '#F5F4F0', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           HOW TO ORDER
@@ -232,7 +232,7 @@ export default function ProductsPage() {
               >
                 {step.number}
               </div>
-              <p style={{ fontSize: '13px', fontWeight: 500, color: '#0B0F14', letterSpacing: '0.06em', marginBottom: '12px' }}>
+              <p style={{ fontSize: '13px', fontWeight: 500, color: '#080808', letterSpacing: '0.06em', marginBottom: '12px' }}>
                 {step.title}
               </p>
               <p style={{ fontSize: '11px', lineHeight: 2.1, color: '#555555', letterSpacing: '0.04em' }}>

@@ -68,7 +68,7 @@ export default function SuitsSection() {
         <div
           style={{
             aspectRatio: '4 / 3',
-            background: '#0F1318',
+            background: '#080808',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',

@@ -77,7 +77,7 @@ export default function AboutAnimated() {
           style={{
             width: '100%',
             height: '360px',
-            background: '#0D1B2E',
+            background: '#080808',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -101,7 +101,7 @@ export default function AboutAnimated() {
       {/* Section 3: Numbers */}
       <div
         className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
-        style={{ background: '#F6F7F9', borderTop: '1px solid rgba(0,0,0,0.06)' }}
+        style={{ background: '#F5F4F0', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           NUMBERS
@@ -114,7 +114,7 @@ export default function AboutAnimated() {
                 style={{
                   fontFamily: 'var(--font-barlow-condensed), sans-serif',
                   fontWeight: 300,
-                  color: '#0B0F14',
+                  color: '#080808',
                   lineHeight: 1,
                   marginBottom: '12px',
                 }}
@@ -138,7 +138,7 @@ export default function AboutAnimated() {
       </div>
 
       {/* Section 4: Values */}
-      <div className="px-6 pb-20 md:px-[72px] md:pb-[120px]" style={{ background: '#FAFAFA' }}>
+      <div className="px-6 pb-20 md:px-[72px] md:pb-[120px]" style={{ background: '#FFFFFF' }}>
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '48px', paddingTop: '64px' }}>
           OUR VALUES
         </p>
@@ -180,7 +180,7 @@ export default function AboutAnimated() {
               <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '20px' }}>
                 {card.tag}
               </p>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#0B0F14', marginBottom: '20px', lineHeight: 1.5 }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#080808', marginBottom: '20px', lineHeight: 1.5 }}>
                 {card.title}
               </h3>
               <p style={{ fontSize: '11px', lineHeight: 2.2, color: '#555555', letterSpacing: '0.05em' }}>

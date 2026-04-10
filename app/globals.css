@@ -4,13 +4,13 @@
 
 :root {
   /* Dark backgrounds */
-  --black-main:  #0B0F14;
-  --black-sub:   #0F1318;
+  --black-main:  #080808;
+  --black-sub:   #080808;
   --black-deep:  #080C10;
 
   /* Light backgrounds */
-  --white-main:  #FAFAFA;
-  --white-sub:   #F6F7F9;
+  --white-main:  #FFFFFF;
+  --white-sub:   #F5F4F0;
 
   /* Accent */
   --gold:        #C5A059;

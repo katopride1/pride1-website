@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#0B0F14]">
+    <section className="relative min-h-screen overflow-hidden bg-[#080808]">
 
       {/* Layer 1: Hero image */}
       <div style={{ position: 'absolute', inset: 0 }}>

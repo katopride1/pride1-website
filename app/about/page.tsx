@@ -7,10 +7,10 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div style={{ background: '#0B0F14', minHeight: '100vh' }}>
+    <div style={{ background: '#080808', minHeight: '100vh' }}>
 
       {/* Section 1: Hero (アニメーションなし) */}
-      <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24" style={{ background: '#FAFAFA' }}>
+      <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24" style={{ background: '#FFFFFF' }}>
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
           <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
@@ -23,7 +23,7 @@ export default function AboutPage() {
             fontFamily: "'Noto Sans JP', sans-serif",
             fontWeight: 300,
             letterSpacing: '0.06em',
-            color: '#0B0F14',
+            color: '#080808',
             lineHeight: 1.6,
             marginBottom: 0,
           }}
