@@ -101,30 +101,43 @@ export default function ServicePage() {
         </div>
       </div>
 
+      {/* Divider: dark → white */}
+      <div style={{ height: '1px', background: 'rgba(10,10,10,0.08)' }} />
+
       {/* Section 2: What we do */}
       <div
         className="px-6 py-12 md:px-[72px] md:py-20"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        style={{ background: '#FFFFFF' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           WHAT WE DO
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
           {services.map((s) => (
-            <div key={s.tag} style={{ background: '#080808', padding: '32px 24px' }}>
-              <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '16px' }}>
+            <div
+              key={s.tag}
+              style={{
+                background: '#F5F4F0',
+                padding: '32px 24px',
+                border: '1px solid rgba(10,10,10,0.10)',
+              }}
+            >
+              <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(10,10,10,0.4)', marginBottom: '16px' }}>
                 {s.tag}
               </p>
-              <h3 style={{ fontSize: '15px', fontWeight: 500, color: 'white', marginBottom: '16px', lineHeight: 1.5 }}>
+              <h3 style={{ fontSize: '15px', fontWeight: 500, color: '#0a0a0a', marginBottom: '16px', lineHeight: 1.5 }}>
                 {s.title}
               </h3>
-              <p style={{ fontSize: '11px', lineHeight: 2.1, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.04em' }}>
+              <p style={{ fontSize: '11px', lineHeight: 2.1, color: 'rgba(10,10,10,0.55)', letterSpacing: '0.04em' }}>
                 {s.body}
               </p>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Divider: white → dark */}
+      <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }} />
 
       {/* Section 3: Schedule */}
       <div

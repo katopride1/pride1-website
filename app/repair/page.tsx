@@ -116,43 +116,49 @@ export default function RepairPage() {
         </div>
       </div>
 
+      {/* Divider: dark → white */}
+      <div style={{ height: '1px', background: 'rgba(10,10,10,0.08)' }} />
+
       {/* Section 2: Services */}
       <div
         className="px-6 py-12 md:px-[72px] md:py-20"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        style={{ background: '#FFFFFF' }}
       >
         <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
           OUR SERVICES
         </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-          {services.map((s) => (
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {services.map((s, i) => (
             <div
               key={s.tag}
               className="grid grid-cols-1 md:grid-cols-[240px_1fr_200px] items-start"
-              style={{ background: '#080808', padding: '32px 24px' }}
+              style={{
+                padding: '32px 24px',
+                borderTop: i === 0 ? undefined : '1px solid rgba(10,10,10,0.10)',
+              }}
             >
               {/* Left */}
               <div>
-                <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '12px' }}>
+                <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(10,10,10,0.4)', marginBottom: '12px' }}>
                   {s.tag}
                 </p>
-                <h3 style={{ fontSize: '16px', fontWeight: 500, color: 'white', lineHeight: 1.5 }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#0a0a0a', lineHeight: 1.5 }}>
                   {s.title}
                 </h3>
               </div>
               {/* Center */}
               <p
                 className="mt-4 md:mt-0 md:px-12"
-                style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', letterSpacing: '0.05em' }}
+                style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.55)', letterSpacing: '0.05em' }}
               >
                 {s.body}
               </p>
               {/* Right */}
               <div className="mt-4 md:mt-0">
-                <p style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '8px' }}>
+                <p style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(10,10,10,0.4)', marginBottom: '8px' }}>
                   {s.durationLabel}
                 </p>
-                <p style={{ fontSize: '13px', color: 'white', fontWeight: 300 }}>
+                <p style={{ fontSize: '13px', color: '#0a0a0a', fontWeight: 300 }}>
                   {s.duration}
                 </p>
               </div>
@@ -160,6 +166,9 @@ export default function RepairPage() {
           ))}
         </div>
       </div>
+
+      {/* Divider: white → dark */}
+      <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }} />
 
       {/* Section 3: How to order */}
       <div
