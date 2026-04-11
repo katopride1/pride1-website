@@ -157,10 +157,10 @@ export default function AirbagPage() {
                 >
                   {item.step}
                 </div>
-                <p style={{ fontSize: '13px', fontWeight: 500, color: '#0a0a0a', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                <p style={{ fontSize: '14px', fontWeight: 500, color: '#0a0a0a', letterSpacing: '0.08em', marginBottom: '10px' }}>
                   {item.title}
                 </p>
-                <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.55)', letterSpacing: '0.05em' }}>
+                <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.65)', letterSpacing: '0.05em' }}>
                   {item.body}
                 </p>
               </div>
@@ -170,10 +170,10 @@ export default function AirbagPage() {
 
         {/* Right */}
         <div style={{ background: '#F5F4F0', border: '1px solid rgba(10,10,10,0.10)', padding: '48px 40px', minWidth: 0 }}>
-          <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#0a0a0a', marginBottom: '24px' }}>
+          <h3 style={{ fontSize: '15px', fontWeight: 500, color: '#0a0a0a', marginBottom: '24px' }}>
             対応モデルについて
           </h3>
-          <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.55)', marginBottom: '40px' }}>
+          <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.65)', marginBottom: '40px' }}>
             エアバッグシステムはすべてのPRIDE1スーツに対応しているわけではありません。対応モデルとガスカートリッジの詳細については、お気軽にご相談ください。
           </p>
           <Link

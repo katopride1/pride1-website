@@ -38,6 +38,8 @@ html {
 
 body {
   min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.9;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -63,6 +65,15 @@ body {
 .cta-button:hover {
   background: #C9A84C;
   color: #000;
+}
+
+.cta-button-filled {
+  transition: background 0.25s, border-color 0.25s;
+}
+.cta-button-filled:hover {
+  background: #B8973E;
+  border-color: #B8973E;
+  color: #000000;
 }
 
 .contact-input::placeholder {

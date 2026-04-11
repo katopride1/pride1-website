@@ -128,7 +128,7 @@ export default function ServicePage() {
               <h3 style={{ fontSize: '15px', fontWeight: 500, color: '#0a0a0a', marginBottom: '16px', lineHeight: 1.5 }}>
                 {s.title}
               </h3>
-              <p style={{ fontSize: '11px', lineHeight: 2.1, color: 'rgba(10,10,10,0.55)', letterSpacing: '0.04em' }}>
+              <p style={{ fontSize: '11px', lineHeight: 2.1, color: 'rgba(10,10,10,0.65)', letterSpacing: '0.04em' }}>
                 {s.body}
               </p>
             </div>
@@ -163,7 +163,7 @@ export default function ServicePage() {
               <p style={{ fontSize: '11px', color: 'rgba(197,160,89,0.7)', letterSpacing: '0.1em', fontWeight: 300 }}>
                 {item.month}
               </p>
-              <p style={{ fontSize: '13px', color: '#080808', fontWeight: 300, letterSpacing: '0.04em' }}>
+              <p style={{ fontSize: '14px', color: '#080808', fontWeight: 300, letterSpacing: '0.04em' }}>
                 {item.event}
               </p>
               <p

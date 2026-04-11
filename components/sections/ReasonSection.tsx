@@ -54,7 +54,7 @@ export default function ReasonSection() {
             fontWeight: 400,
             fontStyle: 'normal',
             color: '#0a0a0a',
-            marginBottom: '16px',
+            marginBottom: '40px',
             lineHeight: 1.2,
           }}
         >
@@ -64,9 +64,9 @@ export default function ReasonSection() {
           style={{
             fontSize: '11px',
             lineHeight: 2.2,
-            color: 'rgba(10,10,10,0.55)',
+            color: 'rgba(10,10,10,0.65)',
             letterSpacing: '0.07em',
-            marginBottom: '96px',
+            marginBottom: '128px',
           }}
         >
           技術と現場。この2つを38年間、一度も手放さなかった。
@@ -79,7 +79,7 @@ export default function ReasonSection() {
           <div
             key={card.number}
             ref={cardRefs[i]}
-            className={`scroll-hidden delay-${i + 1} grid grid-cols-1 md:grid-cols-[80px_260px_1fr] py-10`}
+            className={`scroll-hidden delay-${i + 1} grid grid-cols-1 md:grid-cols-[80px_260px_1fr] items-center py-12`}
             style={{ borderTop: '1px solid rgba(10,10,10,0.10)' }}
           >
             {/* Left: number - desktop only */}
@@ -89,7 +89,7 @@ export default function ReasonSection() {
                 fontFamily: 'var(--font-barlow-condensed), sans-serif',
                 fontSize: '88px',
                 fontWeight: 300,
-                color: 'rgba(10,10,10,0.05)',
+                color: 'rgba(10,10,10,0.18)',
                 lineHeight: 1,
                 marginTop: '-12px',
               }}
@@ -104,7 +104,7 @@ export default function ReasonSection() {
                   fontSize: '9px',
                   letterSpacing: '0.3em',
                   color: 'rgba(197,160,89,0.6)',
-                  marginBottom: '18px',
+                  marginBottom: '12px',
                 }}
               >
                 {card.tag}
@@ -126,9 +126,9 @@ export default function ReasonSection() {
             <p
               className="mt-4 md:mt-0 md:pl-8"
               style={{
-                fontSize: '11px',
-                lineHeight: 2.3,
-                color: 'rgba(10,10,10,0.55)',
+                fontSize: '15px',
+                lineHeight: 1.9,
+                color: 'rgba(10,10,10,0.65)',
                 letterSpacing: '0.05em',
                 fontWeight: 300,
               }}

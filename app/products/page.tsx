@@ -232,7 +232,7 @@ export default function ProductsPage() {
               >
                 {step.number}
               </div>
-              <p style={{ fontSize: '13px', fontWeight: 500, color: '#080808', letterSpacing: '0.06em', marginBottom: '12px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 500, color: '#080808', letterSpacing: '0.06em', marginBottom: '12px' }}>
                 {step.title}
               </p>
               <p style={{ fontSize: '11px', lineHeight: 2.1, color: '#555555', letterSpacing: '0.04em' }}>

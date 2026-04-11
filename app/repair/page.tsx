@@ -149,7 +149,7 @@ export default function RepairPage() {
               {/* Center */}
               <p
                 className="mt-4 md:mt-0 md:px-12"
-                style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.55)', letterSpacing: '0.05em' }}
+                style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.65)', letterSpacing: '0.05em' }}
               >
                 {s.body}
               </p>
@@ -158,7 +158,7 @@ export default function RepairPage() {
                 <p style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(10,10,10,0.4)', marginBottom: '8px' }}>
                   {s.durationLabel}
                 </p>
-                <p style={{ fontSize: '13px', color: '#0a0a0a', fontWeight: 300 }}>
+                <p style={{ fontSize: '14px', color: '#0a0a0a', fontWeight: 300 }}>
                   {s.duration}
                 </p>
               </div>
@@ -193,7 +193,7 @@ export default function RepairPage() {
               >
                 {step.number}
               </div>
-              <p style={{ fontSize: '13px', fontWeight: 500, color: '#080808', letterSpacing: '0.06em', marginBottom: '12px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 500, color: '#080808', letterSpacing: '0.06em', marginBottom: '12px' }}>
                 {step.title}
               </p>
               <p style={{ fontSize: '11px', lineHeight: 2.1, color: '#555555', letterSpacing: '0.04em' }}>

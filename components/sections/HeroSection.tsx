@@ -1,7 +1,11 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function HeroSection() {
+  const [isHovered, setIsHovered] = useState(false)
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#080808]">
 
@@ -90,30 +94,37 @@ export default function HeroSection() {
         </p>
 
         {/* Actions */}
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-12">
+        <div>
+          <p
+            style={{
+              fontSize: '11px',
+              color: 'rgba(255,255,255,0.45)',
+              letterSpacing: '0.1em',
+              marginBottom: '12px',
+            }}
+          >
+            相談・お見積もり無料
+          </p>
           <Link
             href="/contact"
             style={{
-              fontSize: '10px',
-              letterSpacing: '0.22em',
-              color: 'rgba(255,255,255,0.8)',
-              borderBottom: '1px solid #C9A84C',
-              paddingBottom: '4px',
+              display: 'inline-block',
+              padding: '14px 36px',
+              background: isHovered ? '#A07830' : '#C9A84C',
+              color: '#000000',
+              border: `1px solid ${isHovered ? '#A07830' : '#C9A84C'}`,
+              fontFamily: 'var(--font-barlow-condensed)',
+              fontSize: '12px',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase' as const,
+              cursor: 'pointer',
+              transition: 'background 0.25s, border-color 0.25s',
               textDecoration: 'none',
             }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            スーツを相談する
-          </Link>
-          <Link
-            href="/airbag"
-            style={{
-              fontSize: '10px',
-              letterSpacing: '0.18em',
-              color: 'rgba(255,255,255,0.75)',
-              textDecoration: 'none',
-            }}
-          >
-            → エアバッグ対応を確認する
+            まずは無料で相談する
           </Link>
         </div>
       </div>

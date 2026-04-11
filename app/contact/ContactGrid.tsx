@@ -23,7 +23,7 @@ export default function ContactGrid() {
           style={{
             fontSize: '11px',
             letterSpacing: '0.1em',
-            color: 'rgba(10,10,10,0.55)',
+            color: 'rgba(10,10,10,0.65)',
             marginBottom: '48px',
           }}
         >
@@ -64,7 +64,7 @@ export default function ContactGrid() {
           <a
             href="#line"
             style={{
-              fontSize: '14px',
+              fontSize: '15px',
               fontWeight: 300,
               color: 'rgba(10,10,10,0.5)',
               textDecoration: 'none',

@@ -79,7 +79,7 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.55)' }}>
+      <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(10,10,10,0.65)' }}>
         お問い合わせありがとうございます。48時間以内にご返信いたします。
       </p>
     )
