@@ -3,6 +3,7 @@ import { Barlow, Barlow_Condensed, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import StickyBar from '@/components/layout/StickyBar'
 
 const barlow = Barlow({
   subsets: ['latin'],
@@ -50,8 +51,9 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${barlow.variable} ${barlowCondensed.variable} ${notoSansJP.variable}`}>
         <Header />
-        <main style={{ paddingTop: '64px' }}>{children}</main>
+        <main style={{ paddingTop: '64px', paddingBottom: '56px' }}>{children}</main>
         <Footer />
+        <StickyBar />
       </body>
     </html>
   )

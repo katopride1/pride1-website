@@ -18,7 +18,7 @@ export default function HeroSection() {
           priority
           style={{
             objectFit: 'cover',
-            objectPosition: 'center right',
+            objectPosition: '70% center',
           }}
         />
       </div>
@@ -27,8 +27,15 @@ export default function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to right, rgba(8,8,8,0.82) 0%, rgba(8,8,8,0.65) 30%, rgba(8,8,8,0.2) 55%, transparent 100%)',
+          background: 'linear-gradient(to right, rgba(8,8,8,0.88) 0%, rgba(8,8,8,0.65) 35%, rgba(8,8,8,0.15) 60%, transparent 100%)',
         }}
+        aria-hidden="true"
+      />
+
+      {/* Layer 2b: Mobile overlay（モバイルのみ全体を暗くして可読性を確保） */}
+      <div
+        className="absolute inset-0 md:hidden"
+        style={{ background: 'rgba(8,8,8,0.50)' }}
         aria-hidden="true"
       />
 
@@ -41,11 +48,12 @@ export default function HeroSection() {
 
       {/* Layer 4: Content */}
       <div
-        className="absolute z-10 left-6 md:left-[72px]"
-        style={{ top: '45%', transform: 'translateY(-50%)' }}
+        className="absolute inset-0 z-10 flex items-center left-6 md:left-[72px]"
+        style={{ paddingTop: '64px', maxWidth: '520px' }}
       >
+        <div>
         {/* Eyebrow */}
-        <div className="flex items-center" style={{ gap: '12px', marginBottom: '28px' }}>
+        <div className="flex items-center" style={{ gap: '12px', marginBottom: '20px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
           <p style={{ fontSize: '9px', letterSpacing: '0.38em', color: 'rgba(197,160,89,0.75)', margin: 0 }}>
             RACING SAFETY BRAND SINCE 1987
@@ -53,7 +61,7 @@ export default function HeroSection() {
         </div>
 
         {/* H1 */}
-        <h1 style={{ marginBottom: '32px', lineHeight: 1.2 }}>
+        <h1 style={{ marginBottom: '40px', lineHeight: 1.2 }}>
           <span
             className="block"
             style={{
@@ -66,94 +74,30 @@ export default function HeroSection() {
           >
             転倒から、命を守る。
           </span>
-          <span
-            className="block"
-            style={{
-              fontFamily: "var(--font-barlow), sans-serif",
-              fontSize: 'clamp(22px, 2.8vw, 40px)',
-              fontWeight: 300,
-              fontStyle: 'italic',
-              color: 'rgba(255,255,255,0.45)',
-            }}
-          >
-            1987年から。
-          </span>
         </h1>
 
-        {/* Body text */}
-        <p
-          className="text-[10px] md:text-[11px] max-w-full md:max-w-[480px]"
+        {/* CTA Button */}
+        <Link
+          href="/contact"
           style={{
-            lineHeight: 2.2,
-            color: 'rgba(255,255,255,0.38)',
-            letterSpacing: '0.07em',
-            marginBottom: '48px',
+            display: 'inline-block',
+            padding: '14px 36px',
+            background: isHovered ? '#A07830' : '#C5A059',
+            color: '#000000',
+            border: `1px solid ${isHovered ? '#A07830' : '#C5A059'}`,
+            fontFamily: 'var(--font-barlow-condensed)',
+            fontSize: '12px',
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase' as const,
+            cursor: 'pointer',
+            transition: 'background 0.25s, border-color 0.25s',
+            textDecoration: 'none',
           }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          全日本ロードレース選手権にネックエアバッグスーツを唯一供給するブランド。38年間、サーキットの現場でライダーを見続けてきた。
-        </p>
-
-        {/* Actions */}
-        <div>
-          <p
-            style={{
-              fontSize: '11px',
-              color: 'rgba(255,255,255,0.45)',
-              letterSpacing: '0.1em',
-              marginBottom: '12px',
-            }}
-          >
-            相談・お見積もり無料
-          </p>
-          <Link
-            href="/contact"
-            style={{
-              display: 'inline-block',
-              padding: '14px 36px',
-              background: isHovered ? '#A07830' : '#C9A84C',
-              color: '#000000',
-              border: `1px solid ${isHovered ? '#A07830' : '#C9A84C'}`,
-              fontFamily: 'var(--font-barlow-condensed)',
-              fontSize: '12px',
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase' as const,
-              cursor: 'pointer',
-              transition: 'background 0.25s, border-color 0.25s',
-              textDecoration: 'none',
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            まずは無料で相談する
-          </Link>
-        </div>
-      </div>
-
-      {/* Decorative number: desktop only */}
-      <div
-        className="hidden md:block absolute z-10 text-right"
-        style={{ right: '72px', bottom: '88px' }}
-        aria-hidden="true"
-      >
-        <div
-          style={{
-            fontFamily: "var(--font-barlow-condensed), sans-serif",
-            fontSize: '120px',
-            fontWeight: 300,
-            color: 'rgba(255,255,255,0.04)',
-            lineHeight: 1,
-          }}
-        >
-          38
-        </div>
-        <div
-          style={{
-            fontSize: '9px',
-            letterSpacing: '0.24em',
-            color: 'rgba(255,255,255,0.2)',
-          }}
-        >
-          YEARS OF TRUST
+          まずは無料で相談する
+        </Link>
         </div>
       </div>
 

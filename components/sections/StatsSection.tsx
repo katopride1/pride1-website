@@ -15,12 +15,11 @@ export default function StatsSection() {
   const statsRef  = useScrollAnimation()
 
   return (
-    <section style={{ background: '#F5F4F0' }}>
-      <div
-        style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 48px' }}
-      >
+    <section style={{ background: '#ffffff' }}>
+      <div className="max-w-[1200px] mx-auto px-6 py-20 md:px-12">
+
         {/* Section header */}
-        <div ref={headerRef} className="scroll-hidden" style={{ marginBottom: '64px' }}>
+        <div ref={headerRef} className="scroll-hidden" style={{ marginBottom: '48px' }}>
           <p
             style={{
               fontSize: '10px',
@@ -60,45 +59,84 @@ export default function StatsSection() {
           </Link>
         </div>
 
-        {/* 4-column stats row */}
-        <div
-          ref={statsRef}
-          className="scroll-hidden delay-2 grid grid-cols-2 md:grid-cols-4"
-        >
-          {stats.map((stat, i) => (
-            <div
-              key={stat.value}
-              style={{
-                padding: '40px 48px',
-                borderLeft: i > 0 ? '1px solid rgba(10,10,10,0.08)' : undefined,
-              }}
-            >
+        {/* Stats: モバイル1列 / デスクトップ4列 */}
+        <div ref={statsRef} className="scroll-hidden delay-2">
+
+          {/* モバイル（md未満）：縦1列 */}
+          <div className="md:hidden">
+            {stats.map((stat) => (
               <div
+                key={stat.value}
                 style={{
-                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
-                  fontWeight: 200,
-                  fontSize: 'clamp(48px, 5vw, 72px)',
-                  color: '#0a0a0a',
-                  lineHeight: 1,
-                  whiteSpace: 'nowrap',
+                  padding: '24px 0',
+                  borderBottom: '1px solid rgba(10,10,10,0.08)',
                 }}
               >
-                {stat.value}
+                <div
+                  style={{
+                    fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                    fontWeight: 200,
+                    fontSize: '56px',
+                    color: '#0a0a0a',
+                    lineHeight: 1,
+                  }}
+                >
+                  {stat.value}
+                </div>
+                <p
+                  style={{
+                    fontSize: '12px',
+                    letterSpacing: '0.12em',
+                    color: 'rgba(10,10,10,0.45)',
+                    lineHeight: 1.7,
+                    marginTop: '8px',
+                    whiteSpace: 'pre-line',
+                  }}
+                >
+                  {stat.label}
+                </p>
               </div>
-              <p
+            ))}
+          </div>
+
+          {/* デスクトップ（md以上）：4列グリッド */}
+          <div className="hidden md:grid md:grid-cols-4">
+            {stats.map((stat, i) => (
+              <div
+                key={stat.value}
                 style={{
-                  fontSize: '12px',
-                  letterSpacing: '0.12em',
-                  color: 'rgba(10,10,10,0.45)',
-                  lineHeight: 1.7,
-                  marginTop: '12px',
-                  whiteSpace: 'pre-line',
+                  padding: '40px 48px',
+                  borderLeft: i > 0 ? '1px solid rgba(10,10,10,0.08)' : undefined,
                 }}
               >
-                {stat.label}
-              </p>
-            </div>
-          ))}
+                <div
+                  style={{
+                    fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                    fontWeight: 200,
+                    fontSize: 'clamp(48px, 5vw, 72px)',
+                    color: '#0a0a0a',
+                    lineHeight: 1,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {stat.value}
+                </div>
+                <p
+                  style={{
+                    fontSize: '12px',
+                    letterSpacing: '0.12em',
+                    color: 'rgba(10,10,10,0.45)',
+                    lineHeight: 1.7,
+                    marginTop: '12px',
+                    whiteSpace: 'pre-line',
+                  }}
+                >
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

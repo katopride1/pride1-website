@@ -9,7 +9,7 @@ export default function ContactGrid() {
 
   return (
     <div
-      className="px-6 pb-20 md:px-[72px] md:pb-[120px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
+      className="max-w-[1200px] mx-auto px-6 pb-20 md:px-12 md:pb-[120px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
       style={{ background: '#FFFFFF' }}
     >
       {/* Left: Form */}

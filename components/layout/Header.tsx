@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
+import { User } from 'lucide-react'
 // import Image from 'next/image'
 import MobileMenu from '@/components/layout/MobileMenu'
 
@@ -14,27 +15,13 @@ const navLinks = [
 ] as const
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   return (
     <>
-      <header
-        className={[
-          'fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6 md:px-12 transition-all duration-300',
-          scrolled
-            ? 'bg-[rgba(6,14,26,0.85)] backdrop-blur-[12px] border-b border-[#0D2744]'
-            : 'bg-transparent border-b border-transparent',
-        ].join(' ')}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6 md:px-12 bg-[#0a0a0a]">
         {/* ロゴ */}
-        <Link href="/" className="text-[18px] font-medium text-[#EEF4FF] hover:opacity-80 transition-opacity mr-auto">
+        <Link href="/" className="text-[18px] font-medium text-white hover:opacity-80 transition-opacity mr-auto outline-none">
           {/* ロゴ画像に差し替える場合はこちらを使用:
           <Image src="/images/logo.svg" alt="PRIDE1" width={100} height={28} priority />
           */}
@@ -47,28 +34,21 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[13px] text-[#7AABCF] hover:text-[#EEF4FF] transition-colors"
+              className="text-[13px] text-white hover:text-[#C5A059] transition-colors duration-200"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* CTAボタン（md以上） */}
-        <div className="hidden md:block">
+        {/* マイページアイコン（md以上） */}
+        <div className="hidden md:flex items-center">
           <Link
-            href="/contact"
-            style={{
-              fontSize: '11px',
-              letterSpacing: '0.2em',
-              color: 'rgba(197,160,89,0.85)',
-              borderBottom: '1px solid rgba(197,160,89,0.4)',
-              paddingBottom: '2px',
-              background: 'none',
-              textDecoration: 'none',
-            }}
+            href="/mypage"
+            aria-label="マイページ"
+            className="text-white hover:text-[#C5A059] transition-colors duration-200"
           >
-            相談する
+            <User size={20} />
           </Link>
         </div>
 
@@ -76,7 +56,7 @@ export default function Header() {
         <button
           onClick={() => setMenuOpen(true)}
           aria-label="メニューを開く"
-          className="md:hidden text-[#7AABCF] hover:text-[#EEF4FF] transition-colors"
+          className="md:hidden text-white hover:text-[#C5A059] transition-colors duration-200"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
             <line x1="3" y1="6"  x2="21" y2="6" />

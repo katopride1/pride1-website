@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import CTASection from '@/components/sections/CTASection'
 
 export const metadata = {
   title: 'スーツを選ぶ | PRIDE1',
@@ -7,36 +9,54 @@ export const metadata = {
 
 const suits = [
   {
-    category: 'COMPETITION',
-    name: 'PRIDE-R1',
+    category: 'ROAD RACING',
+    name: 'PRR-175 STD',
+    sub: 'Flagship / Neck Airbag',
+    price: '¥245,000〜（税別）',
+    body: '全日本ロードレース選手権に供給するフラッグシップモデル。カンガルー皮革×牛革ハイブリッド構造で、軽さと耐久性を両立。Hit-Air製ネックエアバッグを内蔵し、頚椎への衝撃を機械式で確実にカバーする。',
+    specs: ['素材: カンガルー + 牛革', 'エアバッグ: ネック内蔵', '公認: MFJスタンダード', '区分: 既製 / オーダー対応'],
+    airbag: true,
+    image: '/images/prr-175-orange.png',
+  },
+  {
+    category: 'ROAD RACING',
+    name: 'PRR-145',
+    sub: 'Size Order / Neck Airbag',
+    price: '¥335,000〜（税別）',
+    body: 'PRR-175と同等の安全性能をベースに、完全サイズオーダーで仕上げるモデル。カラーオーダーにも対応し、チームカラーやライダー個人のデザインを反映できる。',
+    specs: ['素材: カンガルー + 牛革', 'エアバッグ: ネック内蔵', '公認: MFJスタンダード', '区分: サイズオーダー専用'],
+    airbag: true,
+    image: '/images/prr-145-red.png',
+  },
+  {
+    category: 'SUPERMOTO',
+    name: 'PRM-103 TypeC',
     sub: 'Full Race Spec',
-    body: '全日本ロードレース選手権に供給する最高峰モデル。ネックエアバッグ内蔵、最高グレードのレザーを使用。プロライダーの要求に応える一着。',
-    specs: ['素材: カンガルーレザー', '重量: 約3.2kg', 'エアバッグ: ネック内蔵', '納期: 約8〜12週間'],
-    airbag: true,
-  },
-  {
-    category: 'COMPETITION',
-    name: 'PRIDE-R2',
-    sub: 'Race Spec',
-    body: 'サーキット走行に必要な性能をすべて備えたスタンダードレースモデル。コストパフォーマンスと安全性を両立。',
-    specs: ['素材: 牛革レザー', '重量: 約3.5kg', 'エアバッグ: 対応可', '納期: 約6〜8週間'],
-    airbag: true,
-  },
-  {
-    category: 'TRACK DAY',
-    name: 'PRIDE-T1',
-    sub: 'Track & Street',
-    body: 'サーキット走行会から一般道まで対応するマルチパーパスモデル。安全性を妥協せず、日常使いの快適さも追求。',
-    specs: ['素材: 牛革レザー', '重量: 約3.8kg', 'エアバッグ: 対応可', '納期: 約6〜8週間'],
+    price: '¥198,000（税別）',
+    body: '全日本スーパーモト選手権で約25%のシェアを誇るスーパーモト専用モデル。シュリンクハイド（高級牛皮革）を用い、モタードならではの動作範囲に対応したパターン設計。',
+    specs: ['素材: シュリンクハイド（高級牛革）', 'エアバッグ: 非対応', '公認: MFJスタンダード', '区分: 既製（M / L / LL）'],
     airbag: false,
+    image: '/images/prm-103-blue.png',
   },
   {
-    category: 'CUSTOM',
-    name: 'PRIDE-C',
-    sub: 'Full Custom Order',
-    body: 'カラーリング、ロゴ、素材、パターンをすべてオーダーメイドで制作するフルカスタムモデル。チームスーツやレプリカスーツにも対応。',
-    specs: ['素材: 選択可', '重量: 仕様による', 'エアバッグ: 対応可', '納期: 約12〜16週間'],
+    category: 'STREET / TOURING',
+    name: 'PRA-116',
+    sub: 'Street Airbag Suit',
+    price: '¥298,000〜（税別）',
+    body: 'ストリートライディングとツーリングに対応した、エアバッグ内蔵スーツ。MFJ公認を取得しながら、日常使いの快適さも追求したマルチパーパスモデル。',
+    specs: ['素材: 牛革', 'エアバッグ: ネック内蔵', '公認: MFJスタンダード', '区分: 既製 / オーダー対応'],
     airbag: true,
+    image: '/images/pra-116-green.png',
+  },
+  {
+    category: 'VINTAGE STYLE',
+    name: 'PRV-158',
+    sub: 'Classic Design',
+    price: '¥260,000〜（税別）',
+    body: 'ヴィンテージカラーの革を用いたクラシカルデザインに、PRIDE1の最新安全技術を組み合わせたモデル。懐かしさと信頼性を一着に。',
+    specs: ['素材: カンガルー + ヴィンテージ牛革', 'エアバッグ: 非対応', '公認: MFJスタンダード', '区分: サイズオーダー専用'],
+    airbag: false,
+    image: '/images/prv-158-black.png',
   },
 ] as const
 
@@ -44,31 +64,31 @@ const orderSteps = [
   {
     number: '01',
     title: 'ご相談',
-    body: 'まずはお問い合わせください。用途・予算・ご要望をお聞きした上で、最適なモデルをご提案します。',
+    body: 'まずはお問い合わせください。用途・予算・ご要望をお聞きし、最適なモデルとオーダー方法をご提案します。',
   },
   {
     number: '02',
-    title: '採寸・デザイン確認',
-    body: '採寸はサーキット会場または郵送でも対応可能。カラーやロゴのデザインを確定します。',
+    title: '試着・採寸',
+    body: '全国12ヶ所のディーラーでサンプルを試着できます。採寸は郵送対応も可能。カラー・デザインを確定します。',
   },
   {
     number: '03',
     title: '製作',
-    body: '職人が一着一着手作業で製作。製作期間中も進捗をご連絡します。',
+    body: '職人が一着ずつ手作業で製作。製作中も進捗をご連絡します。',
   },
   {
     number: '04',
     title: '納品',
-    body: '完成後、配送またはサーキット会場でのお渡し。フィッティング確認も行います。',
+    body: '完成後、配送またはサーキット会場でのお渡し。フィッティングの最終確認を行います。',
   },
 ] as const
 
 export default function ProductsPage() {
   return (
-    <div style={{ background: '#080808', minHeight: '100vh' }}>
+    <div style={{ background: '#ffffff', minHeight: '100vh' }}>
 
       {/* Section 1: Hero */}
-      <div className="px-6 pt-16 pb-20 md:px-[72px] md:pt-24">
+      <div className="max-w-[1200px] mx-auto px-6 pt-16 pb-20 md:px-12 md:pt-24" style={{ background: '#ffffff' }}>
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
           <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
@@ -81,7 +101,7 @@ export default function ProductsPage() {
             fontSize: '36px',
             fontWeight: 300,
             letterSpacing: '0.06em',
-            color: 'white',
+            color: '#111111',
             lineHeight: 1.6,
             marginBottom: 0,
           }}
@@ -92,55 +112,54 @@ export default function ProductsPage() {
           style={{
             fontSize: '12px',
             lineHeight: 2.2,
-            color: 'rgba(255,255,255,0.38)',
+            color: '#555555',
             letterSpacing: '0.07em',
             marginTop: '24px',
-            maxWidth: '480px',
           }}
         >
-          サーキット専用から公道対応まで。PRIDE1のスーツはすべて、転倒データに基づいて設計されています。
+          PRIDE1のスーツはすべて、転倒データに基づいて設計されています。
+        </p>
+        <p
+          style={{
+            fontSize: '12px',
+            lineHeight: 2.2,
+            color: '#555555',
+            letterSpacing: '0.07em',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          サーキット専用からストリート対応まで——全日本ロードレースで証明された安全性を、あなたに。
         </p>
       </div>
 
       {/* Section 2: Lineup */}
-      <div
-        className="px-6 py-12 md:px-[72px] md:py-20"
-        style={{ background: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}
-      >
-        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
+      <div style={{ background: '#f5f4f0' }}>
+      <div className="max-w-[1200px] mx-auto px-6 py-20 md:px-12">
+        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '48px' }}>
           OUR LINEUP
         </p>
         <p style={{ fontSize: '10px', color: '#999999', letterSpacing: '0.06em', marginBottom: '48px' }}>
-          ※ すべてのスーツはオーダーメイドです。サイズ・カラー・ネームはご相談ください。
+          ※ すべてのスーツはオーダーメイドに対応。サイズ・カラー・ネームはご相談ください。
         </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           {suits.map((suit) => (
             <div
               key={suit.name}
-              className="grid grid-cols-1 md:grid-cols-[200px_280px_1fr_240px] items-start p-6 md:p-0"
-              style={{ background: '#F0F1F3' }}
+              className="grid grid-cols-1 md:grid-cols-[240px_280px_1fr_240px] items-start p-6 md:p-0"
+              style={{ background: '#FFFFFF' }}
             >
-              {/* Photo placeholder - desktop only */}
+              {/* Suit photo */}
               <div
-                className="hidden md:flex flex-col items-center justify-center gap-2 self-stretch"
-                style={{
-                  minHeight: '180px',
-                  background: '#FFFFFF',
-                  border: '1px dashed rgba(0,0,0,0.12)',
-                }}
+                className="hidden md:flex items-center justify-center self-stretch"
+                style={{ minHeight: '180px', background: '#FFFFFF', position: 'relative' }}
               >
-                <div style={{ fontSize: '9px', letterSpacing: '0.2em', color: 'rgba(0,0,0,0.3)' }}>
-                  スーツ正面写真
-                </div>
-                <div style={{ fontSize: '10px', letterSpacing: '0.2em', color: 'rgba(0,0,0,0.45)', fontWeight: 500 }}>
-                  SUIT PHOTO
-                </div>
-                <div style={{ fontSize: '9px', letterSpacing: '0.16em', color: 'rgba(0,0,0,0.3)', marginTop: '2px' }}>
-                  {suit.name}
-                </div>
-                <div style={{ fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(0,0,0,0.2)', marginTop: '2px' }}>
-                  明背景推奨
-                </div>
+                <Image
+                  src={suit.image}
+                  alt={suit.name}
+                  width={210}
+                  height={300}
+                  style={{ objectFit: 'contain', padding: '8px' }}
+                />
               </div>
 
               {/* Model info */}
@@ -148,11 +167,14 @@ export default function ProductsPage() {
                 <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(197,160,89,0.6)', marginBottom: '12px' }}>
                   {suit.category}
                 </p>
-                <h3 style={{ fontSize: '18px', fontWeight: 500, color: '#080808', lineHeight: 1.4, marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 500, color: '#111111', lineHeight: 1.4, marginBottom: '8px' }}>
                   {suit.name}
                 </h3>
-                <p style={{ fontSize: '11px', color: '#999999', letterSpacing: '0.06em' }}>
+                <p style={{ fontSize: '11px', color: '#999999', letterSpacing: '0.06em', marginBottom: '8px' }}>
                   {suit.sub}
+                </p>
+                <p style={{ fontSize: '13px', fontWeight: 500, color: '#333333', letterSpacing: '0.04em' }}>
+                  {suit.price}
                 </p>
               </div>
 
@@ -185,7 +207,7 @@ export default function ProductsPage() {
                       marginBottom: '24px',
                     }}
                   >
-                    エアバッグ対応
+                    エアバッグ内蔵
                   </span>
                 )}
                 <Link
@@ -194,7 +216,7 @@ export default function ProductsPage() {
                     display: 'block',
                     fontSize: '10px',
                     letterSpacing: '0.16em',
-                    color: '#080808',
+                    color: '#111111',
                     borderBottom: '1px solid rgba(0,0,0,0.2)',
                     paddingBottom: '3px',
                     textDecoration: 'none',
@@ -208,14 +230,24 @@ export default function ProductsPage() {
           ))}
         </div>
       </div>
+      </div>
 
       {/* Section 3: How to order */}
-      <div
-        className="px-6 py-12 pb-16 md:px-[72px] md:py-20 md:pb-24"
-        style={{ background: '#F5F4F0', borderTop: '1px solid rgba(0,0,0,0.06)' }}
-      >
-        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '64px' }}>
+      <div className="max-w-[1200px] mx-auto px-6 py-20 md:px-12" style={{ background: '#FFFFFF' }}>
+        <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '16px' }}>
           HOW TO ORDER
+        </p>
+        <p
+          style={{
+            fontSize: '12px',
+            lineHeight: 2.2,
+            color: '#555555',
+            letterSpacing: '0.07em',
+            marginBottom: '48px',
+            maxWidth: '480px',
+          }}
+        >
+          すべてのスーツはオーダーメイドに対応。全国12ヶ所のディーラーで試着・採寸が可能です。
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-[2px]">
           {orderSteps.map((step) => (
@@ -223,19 +255,19 @@ export default function ProductsPage() {
               <div
                 style={{
                   fontFamily: 'var(--font-barlow-condensed), sans-serif',
-                  fontSize: '48px',
-                  fontWeight: 300,
-                  color: 'rgba(0,0,0,0.06)',
+                  fontSize: 'clamp(48px, 6vw, 80px)',
+                  fontWeight: 200,
+                  color: '#e0e0e0',
                   lineHeight: 1,
                   marginBottom: '16px',
                 }}
               >
                 {step.number}
               </div>
-              <p style={{ fontSize: '14px', fontWeight: 500, color: '#080808', letterSpacing: '0.06em', marginBottom: '12px' }}>
+              <p style={{ fontSize: '17px', fontWeight: 500, color: '#111111', letterSpacing: '0.06em', marginBottom: '12px' }}>
                 {step.title}
               </p>
-              <p style={{ fontSize: '11px', lineHeight: 2.1, color: '#555555', letterSpacing: '0.04em' }}>
+              <p style={{ fontSize: '15px', lineHeight: 1.9, color: '#555555', letterSpacing: '0.04em' }}>
                 {step.body}
               </p>
             </div>
@@ -243,52 +275,7 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      {/* Section 4: CTA */}
-      <div
-        className="px-6 py-12 pb-20 md:px-[72px] md:py-20 md:pb-[120px]"
-        style={{ borderTop: '1px solid rgba(197,160,89,0.15)' }}
-      >
-        <h2
-          style={{
-            fontFamily: "'Noto Sans JP', sans-serif",
-            fontSize: '28px',
-            fontWeight: 300,
-            letterSpacing: '0.08em',
-            color: 'white',
-            marginBottom: '16px',
-          }}
-        >
-          まず、相談してください。
-        </h2>
-        <p style={{ fontSize: '11px', lineHeight: 2.2, color: 'rgba(255,255,255,0.38)', marginBottom: '48px' }}>
-          どのモデルが合っているかわからない方も、まずはお気軽にご連絡ください。
-        </p>
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-12">
-          <Link
-            href="/contact"
-            style={{
-              fontSize: '10px',
-              letterSpacing: '0.22em',
-              color: 'rgba(255,255,255,0.8)',
-              borderBottom: '1px solid rgba(255,255,255,0.25)',
-              paddingBottom: '4px',
-              textDecoration: 'none',
-            }}
-          >
-            問い合わせフォームへ
-          </Link>
-          <Link
-            href="tel:047-445-8366"
-            style={{
-              fontSize: '10px',
-              color: 'rgba(197,160,89,0.7)',
-              textDecoration: 'none',
-            }}
-          >
-            → 電話で相談する 047-445-8366
-          </Link>
-        </div>
-      </div>
+      <CTASection subtext="どのモデルが合っているかわからない方も、まずはお気軽にご連絡ください。" />
 
     </div>
   )
