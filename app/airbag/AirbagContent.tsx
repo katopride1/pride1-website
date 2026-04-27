@@ -61,6 +61,7 @@ const models = [
   { name: 'Hit-Air RS-1', desc: 'ベストタイプのレーシングエアバッグ。スーツへの後付けに。', href: '/products' },
 ] as const
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function PhotoPlaceholder({ label, size, height = 480 }: { label: string; size: string; height?: number }) {
   return (
     <div

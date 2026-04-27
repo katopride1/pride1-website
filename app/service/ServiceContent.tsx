@@ -129,6 +129,7 @@ export default function ServiceContent() {
 
       {/* CIRCUIT PHOTO */}
       <div style={{ width: '100%', height: '320px', overflow: 'hidden' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/circuit-service.png"
           alt="サーキットでのPRIDE1レーシングサービス"
