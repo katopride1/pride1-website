@@ -51,7 +51,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${barlow.variable} ${barlowCondensed.variable} ${notoSansJP.variable}`}>
         <Header />
-        <main style={{ paddingTop: '64px', paddingBottom: '56px' }}>{children}</main>
+        <main style={{ paddingTop: '64px' }} className="pb-14 md:pb-0">{children}</main>
         <Footer />
         <StickyBar />
       </body>

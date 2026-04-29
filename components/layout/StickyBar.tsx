@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function StickyBar() {
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 flex h-14 md:h-14"
+      className="fixed bottom-0 left-0 right-0 z-50 flex h-14 md:hidden"
       style={{ background: '#0a0a0a' }}
     >
       {/* 左：LINE */}

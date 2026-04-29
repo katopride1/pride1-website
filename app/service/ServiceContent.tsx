@@ -98,9 +98,9 @@ export default function ServiceContent() {
         </div>
         <div ref={heroRef} className="scroll-hidden">
           <h1
+            className="text-[26px] md:text-[36px]"
             style={{
               fontFamily: "'Noto Sans JP', sans-serif",
-              fontSize: '36px',
               fontWeight: 300,
               letterSpacing: '0.06em',
               color: '#111111',
@@ -122,7 +122,7 @@ export default function ServiceContent() {
               maxWidth: '520px',
             }}
           >
-            試着、相談、修理、エアバッグ点検。購入前も購入後も、サーキットの現場で直接対応します。これはカタログを売るブランドには、絶対にできないことです。
+            購入前の試着・相談から、購入後の修理・エアバッグ点検まで。<br />スーツは、売って終わりではなく、走る現場で支え続けるものだと考えています。
           </p>
         </div>
       </div>
@@ -185,23 +185,10 @@ export default function ServiceContent() {
 
       {/* Section 3: Schedule */}
       <div
-        className="max-w-[1200px] mx-auto px-6 py-20 md:px-12"
+        className="max-w-[1200px] mx-auto px-6 pt-10 pb-20 md:px-12"
         style={{ background: '#ffffff' }}
       >
         <div ref={schedLabelRef} className="scroll-hidden" style={{ marginBottom: '48px' }}>
-          <div
-            style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
-              fontSize: 'clamp(72px, 10vw, 120px)',
-              fontWeight: 200,
-              color: 'rgba(10,10,10,0.15)',
-              lineHeight: 1,
-              letterSpacing: '0.02em',
-              marginBottom: '8px',
-            }}
-          >
-            2026
-          </div>
           <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '12px' }}>
             SCHEDULE
           </p>

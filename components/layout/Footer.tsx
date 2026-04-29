@@ -25,7 +25,7 @@ export default function Footer() {
         <div>
           <p className="text-[18px] font-medium text-white">PRIDE1</p>
           <p className="text-[13px] text-[#888888] mt-2 leading-relaxed">
-            Riderのケガを減らすことが、仕事です。
+            ライダーのけがを、少しでも減らす。<br />それが私たちの仕事です。
           </p>
           <div className="flex items-center mt-5" style={{ gap: '24px' }}>
             {snsLinks.map(({ label, href, Icon }) => (

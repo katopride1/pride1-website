@@ -16,9 +16,9 @@ export default function ContactHero() {
       </div>
       <div ref={heroRef} className="scroll-hidden">
         <h1
+          className="text-[26px] md:text-[36px]"
           style={{
             fontFamily: "'Noto Sans JP', sans-serif",
-            fontSize: '36px',
             fontWeight: 300,
             letterSpacing: '0.06em',
             color: '#111111',

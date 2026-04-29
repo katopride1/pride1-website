@@ -13,12 +13,12 @@ export default function ContactGrid() {
       style={{ background: '#FFFFFF' }}
     >
       {/* Left: Form */}
-      <div ref={formRef} className="scroll-hidden" style={{ minWidth: 0, paddingTop: '64px' }}>
+      <div ref={formRef} className="scroll-hidden pt-8 md:pt-[64px]" style={{ minWidth: 0 }}>
         <ContactForm />
       </div>
 
       {/* Right: Other contact methods */}
-      <div ref={rightRef} className="scroll-hidden delay-2" style={{ paddingTop: '72px', minWidth: 0 }}>
+      <div ref={rightRef} className="scroll-hidden delay-2 pt-8 md:pt-[72px]" style={{ minWidth: 0 }}>
         <p
           style={{
             fontSize: '11px',

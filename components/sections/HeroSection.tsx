@@ -18,7 +18,7 @@ export default function HeroSection() {
           priority
           style={{
             objectFit: 'cover',
-            objectPosition: '70% center',
+            objectPosition: '60% center',
           }}
         />
       </div>

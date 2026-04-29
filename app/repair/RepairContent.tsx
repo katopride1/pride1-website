@@ -16,8 +16,8 @@ type Service = {
 const reasons = [
   {
     number: '01',
-    title: '作った人が、直す。',
-    body: 'スーツの縫製構造を知っているのは、作った本人だけです。同一の革・同一の糸での補修が可能で、修理後もMFJ車検を通過できる品質を保証します。',
+    title: '縫った人が、直す。',
+    body: 'スーツの縫製構造を知っているのは、縫った本人だけです。同一の革・同一の糸での補修が可能で、修理後もMFJ車検を通過できる品質を保証します。',
   },
   {
     number: '02',
@@ -119,9 +119,9 @@ export default function RepairContent() {
         </div>
         <div ref={heroRef} className="scroll-hidden">
           <h1
+            className="text-[26px] md:text-[36px]"
             style={{
               fontFamily: "'Noto Sans JP', sans-serif",
-              fontSize: '36px',
               fontWeight: 300,
               letterSpacing: '0.06em',
               color: '#111111',
@@ -129,7 +129,7 @@ export default function RepairContent() {
               marginBottom: 0,
             }}
           >
-            作った人が、直す。
+            縫った人が、直す。
           </h1>
         </div>
         <div ref={subtextRef} className="scroll-hidden delay-1">
@@ -142,7 +142,7 @@ export default function RepairContent() {
               marginTop: '24px',
             }}
           >
-            スーツの縫製構造を知っているのは、作った本人だけです。<br />
+            スーツの縫製構造を知っているのは、縫った本人だけです。<br />
             どの革を、どの糸で、どの強度で縫ったのか。その記憶から、PRIDE1の修理は始まります。
           </p>
         </div>
@@ -307,7 +307,7 @@ export default function RepairContent() {
         <p ref={howLabelRef} className="scroll-hidden" style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '48px' }}>
           HOW TO ORDER
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-[2px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-[2px]">
           {steps.map((step, i) => (
             <div key={step.number} ref={stepRefs[i]} className={`scroll-hidden delay-${i + 1}`} style={{ paddingRight: '16px' }}>
               <div

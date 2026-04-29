@@ -9,14 +9,14 @@ export default function AboutQuote() {
   const nameRef  = useScrollAnimation()
 
   return (
-    <div className="py-16 md:py-20" style={{ background: '#FFFFFF' }}>
+    <div className="py-8 md:py-20" style={{ background: '#FFFFFF' }}>
       <div className="grid grid-cols-1 md:grid-cols-2">
 
         {/* Left: owner photo */}
         <div
           ref={photoRef}
-          className="scroll-hidden"
-          style={{ position: 'relative', minHeight: '480px' }}
+          className="scroll-hidden min-h-[420px] md:min-h-[480px]"
+          style={{ position: 'relative' }}
         >
           <Image
             src="/images/owner.jpeg"
@@ -29,8 +29,7 @@ export default function AboutQuote() {
 
         {/* Right: quote */}
         <div
-          className="px-6 py-20 md:px-16 flex flex-col justify-center"
-          style={{ minHeight: '480px' }}
+          className="px-6 py-8 md:py-0 md:px-16 flex flex-col justify-center md:min-h-[480px]"
         >
           <div
             style={{

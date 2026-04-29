@@ -54,11 +54,12 @@ const steps = [
 ] as const
 
 const models = [
-  { name: 'PRR-175 STD', desc: 'ネックエアバッグ内蔵の既製サイズモデル。フラッグシップ。', href: '/products/prr-175' },
-  { name: 'PRR-105 With AirBag', desc: '業界初の既製サイズエアバッグ内蔵スーツ。', href: '/products' },
-  { name: 'PRR-145（AirBag）', desc: 'オーダーメイド対応のエアバッグ内蔵モデル。', href: '/products' },
-  { name: 'PRA-116（AirBag）', desc: 'ストリートユースにも対応。', href: '/products' },
-  { name: 'Hit-Air RS-1', desc: 'ベストタイプのレーシングエアバッグ。スーツへの後付けに。', href: '/products' },
+  { name: 'レーシングスーツ', modelNumber: 'PRR-175 STD', desc: 'フラッグシップ。カンガルー×牛革ハイブリッド、Hit-Airネックエアバッグ内蔵。', href: '/products#flagship' },
+  { name: 'レーシングスーツ フルオーダー', modelNumber: 'PRR-145', desc: '体型・カラー・デザインを完全オーダーで仕上げる上位モデル。', href: '/products#full-order' },
+  { name: 'スーパーモトスーツ', modelNumber: 'PRM-103 TypeC', desc: '全日本スーパーモト選手権で約25%のシェア。Hit-Airネックエアバッグ内蔵。', href: '/products#supermoto' },
+  { name: 'ストリートスーツ', modelNumber: 'PRA-116', desc: 'ストリート・ツーリング対応。エアバッグ内蔵でMFJ公認。', href: '/products#street' },
+  { name: 'ヴィンテージスーツ', modelNumber: 'PRV-158', desc: 'クラシックデザイン×最新安全技術。Hit-Airネックエアバッグ内蔵。', href: '/products#vintage' },
+  { name: 'Hit-Air RS-1', modelNumber: '', desc: 'ベストタイプのレーシングエアバッグ。スーツへの後付けに。', href: '/products' },
 ] as const
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -87,10 +88,7 @@ export default function AirbagContent() {
   const heroRef    = useScrollAnimation()
   const subtextRef = useScrollAnimation()
 
-  const specRef1 = useScrollAnimation()
-  const specRef2 = useScrollAnimation()
-  const specRef3 = useScrollAnimation()
-  const specRefs = [specRef1, specRef2, specRef3]
+  const statsContainerRef = useScrollAnimation()
 
   const featRef1     = useScrollAnimation()
   const featRef2     = useScrollAnimation()
@@ -109,13 +107,14 @@ export default function AirbagContent() {
   const modelRef3      = useScrollAnimation()
   const modelRef4      = useScrollAnimation()
   const modelRef5      = useScrollAnimation()
-  const modelRefs      = [modelRef1, modelRef2, modelRef3, modelRef4, modelRef5]
+  const modelRef6      = useScrollAnimation()
+  const modelRefs      = [modelRef1, modelRef2, modelRef3, modelRef4, modelRef5, modelRef6]
 
   return (
     <div style={{ background: '#ffffff', minHeight: '100vh' }}>
 
       {/* Hero */}
-      <div className="max-w-[1200px] mx-auto px-6 pb-10 md:px-12" style={{ background: '#ffffff', paddingTop: '100px' }}>
+      <div className="max-w-[1200px] mx-auto px-6 pb-6 md:pb-10 md:px-12" style={{ background: '#ffffff', paddingTop: '100px' }}>
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '32px' }}>
           <div style={{ width: '32px', height: '1px', background: 'rgba(197,160,89,0.5)', flexShrink: 0 }} />
           <p style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.7)', margin: 0 }}>
@@ -124,9 +123,9 @@ export default function AirbagContent() {
         </div>
         <div ref={heroRef} className="scroll-hidden">
           <h1
+            className="text-[26px] md:text-[36px]"
             style={{
               fontFamily: "'Noto Sans JP', sans-serif",
-              fontSize: '36px',
               fontWeight: 300,
               letterSpacing: '0.06em',
               color: '#111111',
@@ -145,22 +144,22 @@ export default function AirbagContent() {
       </div>
 
       {/* Hero photo */}
-      <div style={{ position: 'relative', width: '100%', height: '480px' }}>
+      <div className="h-[300px] md:h-[480px]" style={{ position: 'relative', width: '100%' }}>
         <Image
           src="/images/airbag-suit-hero.png"
           alt="PRIDE1 ネックエアバッグ内蔵レーシングスーツ"
           fill
-          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+          style={{ objectFit: 'cover', objectPosition: '40% center' }}
           priority
         />
       </div>
 
       {/* Stats */}
       <section style={{ background: '#ffffff' }}>
-        <div className="max-w-[1200px] mx-auto px-6 py-20 md:px-12">
+        <div ref={statsContainerRef} className="scroll-hidden max-w-[1200px] mx-auto px-6 py-10 md:py-20 md:px-12">
           <div className="md:hidden">
-            {specs.map((spec, i) => (
-              <div key={spec.value} ref={specRefs[i]} className={`scroll-hidden delay-${i + 1}`} style={{ padding: '24px 0', borderBottom: '1px solid rgba(10,10,10,0.08)' }}>
+            {specs.map((spec) => (
+              <div key={spec.value} style={{ padding: '24px 0', borderBottom: '1px solid rgba(10,10,10,0.08)' }}>
                 <div style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 200, fontSize: '56px', color: '#0a0a0a', lineHeight: 1 }}>
                   {spec.value}<span style={{ fontSize: '24px' }}>{spec.unit}</span>
                 </div>
@@ -170,7 +169,7 @@ export default function AirbagContent() {
           </div>
           <div className="hidden md:grid md:grid-cols-3">
             {specs.map((spec, i) => (
-              <div key={spec.value} ref={specRefs[i]} className={`scroll-hidden delay-${i + 1}`} style={{ padding: '40px 48px', borderLeft: i > 0 ? '1px solid rgba(10,10,10,0.08)' : undefined }}>
+              <div key={spec.value} style={{ padding: '40px 48px', borderLeft: i > 0 ? '1px solid rgba(10,10,10,0.08)' : undefined }}>
                 <div style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 200, fontSize: 'clamp(48px, 5vw, 72px)', color: '#0a0a0a', lineHeight: 1, whiteSpace: 'nowrap' }}>
                   {spec.value}<span style={{ fontSize: '28px' }}>{spec.unit}</span>
                 </div>
@@ -191,7 +190,7 @@ export default function AirbagContent() {
             style={{ borderTop: i === 0 ? undefined : '1px solid rgba(10,10,10,0.08)' }}
           >
             {/* 写真 */}
-            <div className={f.reverse ? 'md:order-2' : 'md:order-1'} style={{ position: 'relative', minHeight: '440px' }}>
+            <div className={`${f.reverse ? 'md:order-2' : 'md:order-1'} min-h-[260px] md:min-h-[440px]`} style={{ position: 'relative' }}>
               <Image
                 src={f.image}
                 alt={f.title}
@@ -202,7 +201,7 @@ export default function AirbagContent() {
 
             {/* テキスト */}
             <div
-              className={`flex flex-col justify-center px-8 py-12 md:py-0 ${f.reverse ? 'md:order-1 md:px-12' : 'md:order-2 md:px-12'}`}
+              className={`flex flex-col justify-center px-8 py-8 md:py-0 ${f.reverse ? 'md:order-1 md:px-12' : 'md:order-2 md:px-12'}`}
               style={{ background: i % 2 === 0 ? '#F5F4F0' : '#ffffff' }}
             >
               <p style={{ fontSize: '9px', letterSpacing: '0.28em', color: 'rgba(10,10,10,0.35)', marginBottom: '20px' }}>{f.tag}</p>
@@ -214,7 +213,7 @@ export default function AirbagContent() {
       </div>
 
       {/* How it works */}
-      <div className="max-w-[1200px] mx-auto px-6 py-20 md:px-12" style={{ background: '#ffffff' }}>
+      <div className="max-w-[1200px] mx-auto px-6 py-10 md:py-20 md:px-12" style={{ background: '#ffffff' }}>
         <p ref={howLabelRef} className="scroll-hidden" style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '48px' }}>
           HOW IT WORKS
         </p>
@@ -232,7 +231,7 @@ export default function AirbagContent() {
       </div>
 
       {/* Models */}
-      <div className="max-w-[1200px] mx-auto px-6 py-20 md:px-12" style={{ background: '#ffffff' }}>
+      <div className="max-w-[1200px] mx-auto px-6 py-10 md:py-20 md:px-12" style={{ background: '#ffffff' }}>
         <p ref={modelsLabelRef} className="scroll-hidden" style={{ fontSize: '9px', letterSpacing: '0.36em', color: 'rgba(197,160,89,0.65)', marginBottom: '48px' }}>
           MODELS
         </p>
