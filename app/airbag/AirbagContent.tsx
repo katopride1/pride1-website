@@ -149,7 +149,7 @@ export default function AirbagContent() {
           src="/images/airbag-suit-hero.png"
           alt="PRIDE1 ネックエアバッグ内蔵レーシングスーツ"
           fill
-          style={{ objectFit: 'cover', objectPosition: '40% center' }}
+          style={{ objectFit: 'contain', objectPosition: 'center' }}
           priority
         />
       </div>
